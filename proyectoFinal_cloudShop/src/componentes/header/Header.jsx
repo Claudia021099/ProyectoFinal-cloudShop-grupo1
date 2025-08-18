@@ -1,17 +1,17 @@
 import React from 'react'
-import '../header/Header.CSS'
+import '../header/Header.css'
 import logo from '../../assets/Logo.jpg'
-
+import { Link } from "react-router-dom";
 
 const Logo = () => (
   <img className='imagen-logo' src={logo} alt="logo" />
 );
+
 const Buscador = ({ placeholder = 'Buscar...' }) => (
   <div className='barra-centro'>
     <input type="text" placeholder={placeholder} className="search" />
   </div>
 );
-import { Link } from "react-router-dom";
 
 const BarraLinks = () => (
   <ul className='ventanas'>
@@ -25,13 +25,12 @@ const BarraLinks = () => (
   </ul>
 );
 
-
-export default BarraLinks;
-
 const Carrito = () => (
-
-  <button className='boton-carrito'>🛒carrito</button>
+  <Link to="/carrito">
+    <button className='boton-carrito'>🛒carrito</button>
+  </Link>
 );
+
 export const Header = () => {
   return (
     <div className='barra-navegacion'>
@@ -44,3 +43,5 @@ export const Header = () => {
     </div>
   )
 }
+
+export default Header;
