@@ -41,11 +41,6 @@
     border-radius: 10px;
 }
 
-.search:hover {
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.503);
-    border: 3px solid #ffffff;
-}
-
 /* links */
 .ventanas {
     list-style: none;

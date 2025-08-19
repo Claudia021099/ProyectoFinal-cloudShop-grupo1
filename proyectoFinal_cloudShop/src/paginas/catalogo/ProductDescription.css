@@ -1,0 +1,28 @@
+.producto-descripcion {
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #0000ff;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.img-producto-descripcion {
+  width: 350px;
+  height: 300px;
+}
+
+.precio-producto,h1 {
+  font-size: 40px;
+  font-weight: bold;
+}

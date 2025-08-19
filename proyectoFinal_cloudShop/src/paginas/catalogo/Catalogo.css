@@ -1,4 +1,29 @@
 .caja-catalogo {
-    border: 10px solid #ff0000;
-    height: 600px;
+  height: 600px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.lista-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.img-catalogo {
+  width: 80px;
+  height: 80px;
+}
+
+.producto:hover {
+  transform: scale(1.05);
 }
