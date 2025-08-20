@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { Header } from '../../componentes/header/Header'
 import { Footer } from '../../componentes/footer/Footer'
-import { DetallesEnvio } from './DetalleEnvio' // Cambiado aquí
+import { DetallesEnvio } from './DetalleEnvio' 
 import { MetodoPago } from './MetodoPago'
 import { Link, Routes, Route, useLocation } from 'react-router-dom'
 import './Carrito.css'
+import { CuponInput } from './CuponInput'
 
 export default function Carrito() {
   const [productos, setProductos] = useState([]);
-  const [cupon, setCupon] = useState("");
+  const [descuentoAplicado, setDescuentoAplicado] = useState(false);
   const location = useLocation();
 
   const actualizarCantidad = (id, incremento) => {
@@ -27,8 +28,9 @@ export default function Carrito() {
     total + (producto.precio * producto.cantidad), 0);
   
   const envio = "Gratis";
+  const descuento = descuentoAplicado ? subtotal * 0.20 : 0; 
   const tarifa = subtotal * 0.05;
-  const total = subtotal + tarifa;
+  const total = subtotal - descuento + tarifa;
 
   const renderEstrellas = (calificacion) => {
     return "★".repeat(calificacion) + "☆".repeat(5 - calificacion);
@@ -68,20 +70,18 @@ export default function Carrito() {
 
       <div className="carrito-resumen">
         <h2>Resumen</h2>
-        <div className="cupon">
-          <input 
-            type="text" 
-            placeholder="Código de cupón"
-            value={cupon}
-            onChange={(e) => setCupon(e.target.value)}
-          />
-          <button>Aplicar</button>
-        </div>
+        <CuponInput onDescuentoAplicado={setDescuentoAplicado} />
         <div className="resumen-costos">
           <div className="costo-item">
             <span>Sub-total</span>
             <span>${subtotal.toFixed(2)}</span>
           </div>
+          {descuentoAplicado && (
+            <div className="costo-item descuento">
+              <span>Descuento Estudiante (20%)</span>
+              <span>-${descuento.toFixed(2)}</span>
+            </div>
+          )}
           <div className="costo-item">
             <span>Envío</span>
             <span className="envio-gratis">{envio}</span>
