@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { Header } from '../../componentes/header/Header'
-import { Footer } from '../../componentes/footer/Footer'
 import { DetallesEnvio } from './DetalleEnvio' 
 import { MetodoPago } from './MetodoPago'
 import { Link, Routes, Route, useLocation } from 'react-router-dom'
@@ -101,7 +99,6 @@ export default function Carrito() {
 
   return (
     <>
-      <Header />
       <div className="proceso-compra">
         <nav className="nav-proceso">
           <Link 
@@ -129,7 +126,6 @@ export default function Carrito() {
           <Route path="/pago" element={<MetodoPago />} />
         </Routes>
       </div>
-      <Footer />
     </>
   );
 }

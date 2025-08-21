@@ -4,7 +4,7 @@ import logoMastercard from '../../assets/mastercard.png'
 import logoVisa from '../../assets/visa.png'
 import logoAmerican from '../../assets/american.png'
 
-const BarraInferior = () => (
+const Footer = () => (
   <footer className="footer">
     <div className="footer-container">
       <div className="footer-logo">
@@ -40,8 +40,5 @@ const BarraInferior = () => (
     </div>
   </footer>
 );
-export const Footer = () => {
-  return (
-    <BarraInferior />
-  )
-};
+
+export default Footer;

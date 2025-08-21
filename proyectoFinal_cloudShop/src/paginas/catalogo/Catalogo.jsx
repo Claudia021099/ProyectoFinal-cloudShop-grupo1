@@ -1,33 +1,50 @@
-import { Header } from '../../componentes/header/Header'
-import { Footer } from '../../componentes/footer/Footer'
-import { Link } from 'react-router-dom';
-import productos from '../../data/productos';
-import '../catalogo/Catalogo.css'
 
-export default function Catalogo() {
+import { Link } from 'react-router-dom';
+import '../catalogo/Catalogo.css'
+import laptopsImg from '../../assets/catalogo/laptops.jpg';
+import desktopImg from '../../assets/catalogo/desktop.png';
+import audioImg from '../../assets/catalogo/headphones.png';
+import cpuImg from '../../assets/catalogo/cpus.jpg';
+import gpuImg from '../../assets/catalogo/gpus.jpg';
+
+function Catalogo() {
   return (
     <>
-      <Header />
       <div className="caja-catalogo">
-        <h1>Catálogo</h1><br />
-        <div className="lista-productos">
-          {productos.map((product) => (
-            <Link
-              to={`/catalogo/${product.id}`}
-              key={product.id}
-              className="producto"
-            >
-              <div>
-                <img className='img-catalogo' src={product.img} alt={product.name} />
-                <h3>{product.nombre}</h3>
-                <p>Price: ${product.precio}</p>
-              </div>
-            </Link>
-          ))}
+        <div className='contenedor-catalogo'>
+          <Link to="/laptop">
+            <div className='catalogo-productos'>
+              <img src={laptopsImg} className='img-atalogo-productos' />
+              <h3>LAPTOPS</h3>
+            </div>
+          </Link>
+          <Link to="/desktop">
+            <div className='catalogo-productos'>
+              <img src={desktopImg} className='img-atalogo-productos' />
+              <h3>DESKTOP</h3>
+            </div>
+          </Link>
+          <Link to="/audio">
+            <div className='catalogo-productos'>
+              <img src={audioImg} className='img-atalogo-productos' />
+              <h3>AUDIO</h3>
+            </div>
+          </Link>
+          <Link to="/cpu">
+            <div className='catalogo-productos'>
+              <img src={cpuImg} className='img-atalogo-productos' />
+              <h3>CPU</h3>
+            </div>
+          </Link>
+          <Link to="/gpu">
+            <div className='catalogo-productos'>
+              <img src={gpuImg} className='img-atalogo-productos' />
+              <h3>GPU</h3>
+            </div>
+          </Link>
         </div>
       </div>
-      <Footer />
     </>
   )
 }
-
+export default Catalogo;

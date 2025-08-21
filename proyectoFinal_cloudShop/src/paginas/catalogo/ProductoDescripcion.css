@@ -26,3 +26,11 @@
   font-size: 40px;
   font-weight: bold;
 }
+.btn-añadir-carrito {
+  background-color: #ff5353; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
