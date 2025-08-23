@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import productos from "../../data/productos";
 import "./ProductoDescripcion.css";
-import laptopsImg from '../../assets/catalogo/laptops.jpg';
 
 function Stars({ value = 0 }) {
   const full = Math.floor(value);
@@ -29,7 +28,7 @@ function ProductDescripcion() {
         <div className="pd-galeria">
           <div className="contenedor-catalogo">
             {/*imagen en duro */}
-            <img src={laptopsImg} className='img-atalogo-productos' />
+            <img src={producto.img} className='img-descripcion-producto' alt={producto.nombre} />
             {/* <img src={imgMostrada} alt={producto.nombre} /> */}
           </div>
           {producto.galeria?.length > 0 && (

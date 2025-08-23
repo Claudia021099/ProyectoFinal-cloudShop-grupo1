@@ -17,9 +17,7 @@ function CatalogoAudios() {
                                 className="producto"
                             >
                                 <div>
-                                    <img
-                                        className="img-catalogo"                                        
-                                    />
+                                    <img src={product.img} className="img-catalogo" alt={product.nombre} />
                                     <h3>{product.nombre}</h3>
                                     <p>Price: ${product.precio}</p>
                                 </div>

@@ -1,6 +1,6 @@
 .producto-descripcion {
   max-width: 1200px;
-  margin: 24px auto 80px;
+  margin: 70px auto 80px;
   padding: 0 16px;
   color: #0f172a; 
 }
@@ -106,3 +106,10 @@
   .pd-specs li strong { width: 160px; }
   .pd-similares { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 } 
+.img-descripcion-producto {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;  
+  border: 3px solid #d9d9d9;
+  border-radius: 25px;
+}
