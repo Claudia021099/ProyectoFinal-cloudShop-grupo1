@@ -1,0 +1,81 @@
+/* Contenedor que envuelve al form */
+.login-container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del formulario */
+.login-container form {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: aparecer 0.5s ease-in-out;
+}
+
+.login-container input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.login-container button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #357ab8, #6a0ecf);
+}
+
+/* Estilo del mensaje de error */
+
+.perfil-usuario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    /* ocupa toda la pantalla */
+    color: rgb(50, 0, 143);
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.perfil-usuario h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-usuario button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: #bd95ff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.perfil-usuario button:hover {
+    background-color: #2575fc;
+    color: #fff;
+    transform: scale(1.05);
+}

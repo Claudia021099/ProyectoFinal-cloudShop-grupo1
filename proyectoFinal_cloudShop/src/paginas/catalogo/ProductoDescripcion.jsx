@@ -16,7 +16,7 @@ function Stars({ value = 0 }) {
   );
 }
 
-function ProductDescripcion() {
+function ProductDescripcion({ onAddToCart }) {
   const { productId } = useParams();
   const producto = productos.find((p) => p.id === Number(productId));
 
@@ -70,10 +70,8 @@ function ProductDescripcion() {
           </p>
 
           <div className="pd-cta">
-            <Link to="/carrito" className="btn-primario"
-             onClick={() => { alert("Producto añadido al carrito");
-              // addItem(producto) Implementar función
-               }} > Agregar carrito </Link>
+            <Link className="btn-primario"
+              onClick={onAddToCart} > Agregar carrito </Link>
             <button className="btn-like" aria-label="Guardar en favoritos">
               ♡
             </button>

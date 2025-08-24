@@ -1,11 +1,14 @@
 import { useState } from 'react'
-import { DetallesEnvio } from './DetalleEnvio' 
+import { DetallesEnvio } from './DetalleEnvio'
 import { MetodoPago } from './MetodoPago'
-import { Link, Routes, Route, useLocation } from 'react-router-dom'
+import { Link, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import './Carrito.css'
 import { CuponInput } from './CuponInput'
 
-export default function Carrito() {
+export default function Carrito({ isLoggedIn }) {
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
   const [productos, setProductos] = useState([]);
   const [descuentoAplicado, setDescuentoAplicado] = useState(false);
   const location = useLocation();
@@ -14,7 +17,7 @@ export default function Carrito() {
     setProductos(productos.map(producto => {
       if (producto.id === id) {
         const nuevaCantidad = producto.cantidad + incremento;
-        return nuevaCantidad >= 0 
+        return nuevaCantidad >= 0
           ? { ...producto, cantidad: nuevaCantidad }
           : producto;
       }
@@ -22,11 +25,11 @@ export default function Carrito() {
     }));
   };
 
-  const subtotal = productos.reduce((total, producto) => 
+  const subtotal = productos.reduce((total, producto) =>
     total + (producto.precio * producto.cantidad), 0);
-  
+
   const envio = "Gratis";
-  const descuento = descuentoAplicado ? subtotal * 0.20 : 0; 
+  const descuento = descuentoAplicado ? subtotal * 0.20 : 0;
   const tarifa = subtotal * 0.05;
   const total = subtotal - descuento + tarifa;
 
@@ -101,19 +104,19 @@ export default function Carrito() {
     <>
       <div className="proceso-compra">
         <nav className="nav-proceso">
-          <Link 
+          <Link
             to="/carrito"
             className={`nav-item ${location.pathname === '/carrito' ? 'activo' : ''}`}
           >
             Carrito de Compra
           </Link>
-          <Link 
+          <Link
             to="/carrito/envio"
             className={`nav-item ${location.pathname === '/carrito/envio' ? 'activo' : ''}`}
           >
             Detalles de Envío
           </Link>
-          <Link 
+          <Link
             to="/carrito/pago"
             className={`nav-item ${location.pathname === '/carrito/pago' ? 'activo' : ''}`}
           >
