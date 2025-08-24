@@ -236,3 +236,119 @@
     border: 10px solid #c71104;
     height: 600px;
 }
+
+/* */
+.pago-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  font-family: Inter, system-ui, Arial, sans-serif; /**/
+}
+
+.metodosPago {
+  flex: 0.755;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  gap : 10px;
+}
+
+.btn-activo {
+  width: 46px;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px
+}
+
+.btn-inactivo {
+  margin-top: 27px;
+  width: 35px;
+  cursor: pointer;
+  margin-left: 25.4px;
+  margin-bottom: 30px
+}
+
+.botonesSeleccion {
+  margin-top: 20px;
+  margin-bottom: 20px; /*modificar p*/
+  gap: 20px;
+}
+
+.tarjetaCredito {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #C8E5FF;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  border: 1px solid #dbeffd;
+}
+
+.paypal {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #C8E5FF;
+  border-radius: 20px;
+  border: 1px solid #dbeffd;
+  display: flex;
+}
+
+#datosTarjetaxd {
+  margin-bottom: 25px;
+}
+
+.campo1 {
+  background-color: #D4FCF5;
+  border: 1px solid;
+  border-radius: 4px;
+  width: 303px;
+  font-size: 23px;
+  margin-left: 39px;
+  margin-top: 30px;
+}
+
+.campo2 {
+  background-color: #D4FCF5;
+  border: 1px solid;
+  border-radius: 4px;
+  width: 135px;
+  font-size: 23px;
+  margin-left: 43px;
+  margin-top: 30px;
+}
+
+.campo3 {
+  background-color: #D4FCF5;
+  border: 1px solid;
+  border-radius: 4px;
+  width: 111px;
+  font-size: 23px;
+  margin-left: 28px;
+  margin-top: 30px;
+}
+
+.campo4 {
+  background-color: #D4FCF5;
+  border: 1px solid;
+  border-radius: 4px;
+  width: 620px;
+  font-size: 23px;
+  margin-left: 39px;
+  margin-top: 26px;
+}
+
+.onPaypal {
+  width: 60px;
+  margin-left: 370px;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.offPaypal {
+  width: 60px;
+  margin-left: 375px;
+  height: 60px;
+  margin-top: 18px;
+  opacity: 40%;
+}
+
+/* */
