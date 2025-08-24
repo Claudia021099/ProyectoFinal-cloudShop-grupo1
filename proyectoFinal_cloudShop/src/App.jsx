@@ -40,6 +40,7 @@ function App() {
           path="/laptop/:productId"
           element={<ProductoDescripcion onAddToCart={handleClick} isLoggedIn={isLoggedIn} />}
         />
+ 
         <Route path="/desktop" element={<CatalogoDesktops />} />
         <Route
           path="/desktop/:productId"

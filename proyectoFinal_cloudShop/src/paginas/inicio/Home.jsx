@@ -15,6 +15,7 @@ import img1 from "../../assets/banner/img1.png";
 import img02 from "../../assets/banner/img2.png";
 import img3 from "../../assets/banner/img3.png";
 import img4 from "../../assets/banner/img4.png";
+import Productos from "./Productos";
 
 function Home() {
   const [index, setIndex] = useState(0);
@@ -39,17 +40,17 @@ function Home() {
           </Link>
 
           <div className="descript">
-            <div className="precio">
+            <div className="prec">
               <p>Laptop Hp Gamer Omen Max 32gb Ram Ssd 16"</p>
               <h2 className="pre1">S/.7,999</h2>
               <h3>S/ 2,399</h3>
             </div>
-            <div className="precio">
+            <div className="prec">
               <p>Laptop Gamer Asus ROG Strix 64GB 1TB RTX 5090"</p>
               <h2 className="pre1">S/.7,999</h2>
               <h3>S/ 2,399</h3>
             </div>
-            <div className="precio">
+            <div className="prec">
               <p>Laptop HP Pavilion Gaming 15-dk0001la Core i5-9300H 8GB</p>
               <h2  className="pre1">S/.7,999</h2>
               <h3>S/ 2,399</h3>
@@ -74,17 +75,17 @@ function Home() {
 
 
           <div className="descript">
-            <div className="precio">
+            <div className="prec">
               <p>Computadora PC Gamer Core I7 Ram32GB, SSD 960GB</p>
               <h2 className="pre">S/.2,899</h2>
               <h3>S/ 3,299</h3>
             </div>
-            <div className="precio">
+            <div className="prec">
               <p>COMPUTADORA PC i5 16GB 256GB Monitor LED Curvo 23.8</p>
               <h2 className="pre">S/.1,450</h2>
               <h3>S/ 1,350</h3>
             </div>
-            <div className="precio">
+            <div className="prec">
               <p>Computadora PC Intel Core i7 3.2ghz RAM 16GB 240GB Monitor 27</p>
               <h2 className="pre">S/1,328</h2>
               <h3>S/ 1,238</h3>
@@ -151,6 +152,10 @@ function Home() {
       </div>
       <br />
       <br />
+      <hr style={{ height: "2px", backgroundColor: "black", border: "none" }} />
+      <br />
+      <h1>Productos en Oferta</h1>
+      <Productos/>
     </>
   );
 }

@@ -1,3 +1,6 @@
+body{
+  width: 100%;
+}
 .banner-container {
   display: flex;
   justify-content: center; 
@@ -40,15 +43,14 @@
     top: 120px;
     left: 580px;
     gap: 120px;
-
 }
-.precio {
+.prec {
   display: flex;
   flex-direction: column; 
   align-items:flex-start;
 }
 
-.prec1{
+.pre1{
     background-color: red;
     width: 95px;
     border-radius: 10px;
@@ -96,4 +98,9 @@ h3{
     background-color: black;
     width: 100px;
     border-radius: 10px;
+}
+h1{
+    text-align: center;
+    color: #042b54;
+    font-family: Arial, sans-serif;
 }

@@ -1,0 +1,52 @@
+.carrusel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.carrusel-btn {
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.productos-wrapper {
+  display: flex;
+  gap: 10px;
+  width: 1400px;
+  justify-content: center;
+}
+
+.producto-card {
+  flex: 0 0 450px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.producto-img {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.producto-nombre {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.descripcion {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.precio{
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a73e8;
+}
