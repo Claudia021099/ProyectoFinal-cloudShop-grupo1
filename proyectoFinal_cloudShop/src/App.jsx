@@ -38,33 +38,33 @@ function App() {
         <Route path="/laptop" element={<CatalogoLaptops />} />
         <Route
           path="/laptop/:productId"
-          element={<ProductoDescripcion onAddToCart={handleClick} />}
+          element={<ProductoDescripcion onAddToCart={handleClick} isLoggedIn={isLoggedIn} />}
         />
         <Route path="/desktop" element={<CatalogoDesktops />} />
         <Route
           path="/desktop/:productId"
-          element={<ProductoDescripcion onAddToCart={handleClick} />}
+          element={<ProductoDescripcion onAddToCart={handleClick} isLoggedIn={isLoggedIn} />}
         />
         <Route path="/audio" element={<CatalogoAudios />} />
         <Route
           path="/audio/:productId"
-          element={<ProductoDescripcion onAddToCart={handleClick} />}
+          element={<ProductoDescripcion onAddToCart={handleClick} isLoggedIn={isLoggedIn} />}
         />
         <Route path="/cpu" element={<CatalogoCpus />} />
         <Route
           path="/cpu/:productId"
-          element={<ProductoDescripcion onAddToCart={handleClick} />}
+          element={<ProductoDescripcion onAddToCart={handleClick} isLoggedIn={isLoggedIn} />}
         />
         <Route path="/gpu" element={<CatalogoGpus />} />
         <Route
           path="/gpu/:productId"
-          element={<ProductoDescripcion onAddToCart={handleClick} />}
+          element={<ProductoDescripcion onAddToCart={handleClick} isLoggedIn={isLoggedIn} />}
         />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/ayuda" element={<Ayuda />} />
         <Route path="/carrito" element={<Carrito isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/carrito/*" element={<Carrito isLoggedIn={isLoggedIn} />} />
-        <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setCount={setCount}/>} />
+        <Route path="/login" element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setCount={setCount} />} />
       </Routes>
       <Footer />
     </>

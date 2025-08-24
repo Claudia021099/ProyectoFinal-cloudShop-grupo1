@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import productos from "../../data/productos";
 import "./ProductoDescripcion.css";
 
@@ -16,12 +16,23 @@ function Stars({ value = 0 }) {
   );
 }
 
-function ProductDescripcion({ onAddToCart }) {
+function ProductDescripcion({ onAddToCart, isLoggedIn }) {
   const { productId } = useParams();
-  const producto = productos.find((p) => p.id === Number(productId));
+  const navigate = useNavigate();
 
+  const producto = productos.find((p) => p.id === Number(productId));
   if (!producto) return <div className="notfound">Producto no encontrado</div>;
+
   const similares = productos.filter((p) => producto.similares?.includes(p.id));
+
+  const handleAddToCart = () => {
+    if (!isLoggedIn) {
+      navigate("/login");
+      return;
+    }
+    onAddToCart(producto);
+  };
+
   return (
     <div className="producto-descripcion">
       <div className="pd-header">
@@ -56,7 +67,6 @@ function ProductDescripcion({ onAddToCart }) {
               {(producto.rating ?? 0).toFixed(1)} • {producto.reseñas?.length ?? 0} reseñas
             </span>
           </div>
-
           <div className="pd-precio">
             <span className="moneda">{producto.moneda || "S/"}</span>
             <span className="monto">
@@ -70,8 +80,9 @@ function ProductDescripcion({ onAddToCart }) {
           </p>
 
           <div className="pd-cta">
-            <Link className="btn-primario"
-              onClick={onAddToCart} > Agregar carrito </Link>
+            <button className="btn-primario" onClick={handleAddToCart}>
+              Agregar carrito
+            </button>
             <button className="btn-like" aria-label="Guardar en favoritos">
               ♡
             </button>
