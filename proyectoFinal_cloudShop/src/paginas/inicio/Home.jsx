@@ -41,17 +41,17 @@ function Home() {
           <div className="descript">
             <div className="precio">
               <p>Laptop Hp Gamer Omen Max 32gb Ram Ssd 16"</p>
-              <h2>S/.7,999</h2>
+              <h2 className="pre1">S/.7,999</h2>
               <h3>S/ 2,399</h3>
             </div>
             <div className="precio">
               <p>Laptop Gamer Asus ROG Strix 64GB 1TB RTX 5090"</p>
-              <h2>S/.7,999</h2>
+              <h2 className="pre1">S/.7,999</h2>
               <h3>S/ 2,399</h3>
             </div>
             <div className="precio">
               <p>Laptop HP Pavilion Gaming 15-dk0001la Core i5-9300H 8GB</p>
-              <h2>S/.7,999</h2>
+              <h2  className="pre1">S/.7,999</h2>
               <h3>S/ 2,399</h3>
             </div>
           </div>
@@ -69,7 +69,7 @@ function Home() {
             <img className="img3" src={img4} alt="laptop" />
           </div>
           <Link to="/desktop">
-            <button className="btn">Ver más →</button>
+            <button className="btn1">Ver más →</button>
           </Link>
 
 

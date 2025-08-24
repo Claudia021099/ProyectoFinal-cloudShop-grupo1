@@ -48,7 +48,7 @@
   align-items:flex-start;
 }
 
-h2{
+.prec1{
     background-color: red;
     width: 95px;
     border-radius: 10px;
@@ -74,7 +74,7 @@ h3{
 .ver:hover {
   background: #cc0000;
 }
-.btn {
+.btn1 {
     position: absolute;
     background: white;
     color: #ff0000;
@@ -89,7 +89,7 @@ h3{
   
 }
 
-.btn:hover {
+.btn1:hover {
   background:#FAF7F3;
 }
 .pre{
