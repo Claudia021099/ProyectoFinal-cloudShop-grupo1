@@ -176,7 +176,7 @@ const productos = [
         id: 9,
         img: img9,
         tipo: "LAPTOP",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "Microsoft Surface Laptop 7th Edition 15",
         descripcion: "A Copilot+ PC with Qualcomm Snapdragon X Elite, 120Hz display, and exceptional battery life, designed for Windows 11 AI features and productivity.",
         precio: 1399
@@ -221,7 +221,7 @@ const productos = [
         id: 14,
         img: img14,
         tipo: "LAPTOP",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "Asus Vivobook S 14",
         descripcion: "A compact laptop with Intel Core Ultra 5 226V, 17-hour battery life, and a 14-inch OLED display, great for students and professionals.",
         precio: 999
@@ -302,7 +302,7 @@ const productos = [
         id: 23,
         img: img23,
         tipo: "DESKTOP",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "HP Omen 45L",
         descripcion: "A gaming desktop with AMD Ryzen 9 7900X, Nvidia RTX 4090, and liquid cooling, designed for high-end gaming and multitasking.",
         precio: 2499
@@ -347,7 +347,7 @@ const productos = [
         id: 28,
         img: img28,
         tipo: "DESKTOP",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "ASUS ROG Strix G16",
         descripcion: "A compact gaming desktop with Intel Core i7-13700F, Nvidia RTX 4060, and 16GB RAM, ideal for mid-range gaming setups.",
         precio: 1499
@@ -410,7 +410,7 @@ const productos = [
         id: 35,
         img: img35,
         tipo: "DESKTOP",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "HP Envy TE01",
         descripcion: "A versatile desktop with Intel Core i7-13700, Nvidia RTX 3060, and 16GB RAM, suitable for productivity and light gaming.",
         precio: 1299
@@ -482,7 +482,7 @@ const productos = [
         id: 43,
         img: img43,
         tipo: "AUDIO",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "Apple AirPods Pro 2",
         descripcion: "True wireless earbuds with active noise cancellation, spatial audio, and up to 6 hours of listening time per charge.",
         precio: 249
@@ -518,7 +518,7 @@ const productos = [
         id: 47,
         img: img47,
         tipo: "AUDIO",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "Bose SoundLink Flex",
         descripcion: "A portable Bluetooth speaker with crisp sound, waterproof design, and up to 12 hours of battery life.",
         precio: 149
@@ -590,7 +590,7 @@ const productos = [
         id: 55,
         img: img55,
         tipo: "AUDIO",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "JBL Flip 6",
         descripcion: "A compact Bluetooth speaker with bold sound, IP67 waterproofing, and up to 12 hours of playtime.",
         precio: 129
@@ -644,7 +644,7 @@ const productos = [
         id: 61,
         img: img61,
         tipo: "CPU",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "Intel Core i9-14900K",
         descripcion: "A high-performance desktop processor with 24 cores, 32 threads, and up to 5.8 GHz, ideal for gaming and professional workloads.",
         precio: 549
@@ -698,7 +698,7 @@ const productos = [
         id: 67,
         img: img67,
         tipo: "CPU",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "Intel Core i5-14600K",
         descripcion: "A 14-core, 20-thread processor with up to 5.3 GHz, ideal for mid-range gaming and productivity.",
         precio: 299
@@ -743,7 +743,7 @@ const productos = [
         id: 72,
         img: img72,
         tipo: "CPU",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "AMD Ryzen 7 7700X",
         descripcion: "An 8-core, 16-thread processor with up to 5.4 GHz, offering strong performance for gaming and productivity.",
         precio: 349
@@ -779,7 +779,7 @@ const productos = [
         id: 76,
         img: img76,
         tipo: "CPU",
-        estado: "",
+        estado: "LO MAS VENDIDO",
         nombre: "AMD Ryzen 9 9900X",
         descripcion: "A 12-core, 24-thread processor with up to 5.6 GHz, built for high-end gaming and creative workloads.",
         precio: 499
