@@ -1,5 +1,5 @@
 .caja-catalogo {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding-top: 20px;
 }
@@ -7,8 +7,9 @@
 .img-atalogo-productos {
   width: 150px;
   height: 150px;
-  border: 3px solid #d9d9d9;
-  border-radius: 75px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto h3 {
@@ -21,6 +22,7 @@
 .catalogo-productos {
   width: 150px;
   transition: transform 0.2s;
+  text-align: center;
 }
 
 .catalogo-productos:hover {
@@ -44,7 +46,7 @@ a {
 .caja-catalogo {
   height: 100%;
   padding-top: 1%;
-  padding-bottom: 15%;
+  padding-bottom: 1%;
   overflow-y: auto;
 }
 
@@ -74,7 +76,6 @@ a {
 
 .producto img {
   width: 100%;
-  height: 160px;
   object-fit: cover;
   border-radius: 0.5rem;
   margin-bottom: 0.75rem;
@@ -88,7 +89,7 @@ a {
 .contenedor-banner {
   width: 100%;
   height: 100%;
-  padding: 5%;
+  padding: 2%;
 }
 
 .box1 {
@@ -107,7 +108,7 @@ a {
 
 .carrusel-mas-vendidos {
   width: 100%;
-  padding-bottom: 35px;
+  padding-bottom: 25px;
   padding-top: 20px;
 }
 
@@ -117,6 +118,7 @@ a {
 }
 
 .titulo-seccion {
+  padding-bottom: 20px;
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -219,3 +221,16 @@ a {
   font-size: 18px;
   font-weight: bold;
 }
+
+/* ETIQUETA "Lo más vendido" */
+.badge-mas-vendido {
+  position: absolute;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+

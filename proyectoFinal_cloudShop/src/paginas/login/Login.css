@@ -30,52 +30,67 @@
     padding: 12px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    background: #06417f;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #357ab8, #6a0ecf);
+  background: #063a71;
+  transform: scale(1.02);
 }
 
 /* Estilo del mensaje de error */
 
+
 .perfil-usuario {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 300px;
-    /* ocupa toda la pantalla */
-    color: rgb(50, 0, 143);
-    font-family: Arial, sans-serif;
-    text-align: center;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
 }
 
-.perfil-usuario h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+.perfil-usuario ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.perfil-usuario li {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.perfil-usuario li span {
+  font-weight: normal;
+  color: #555;
+  margin-left: 5px;
 }
 
 .perfil-usuario button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 25px;
-    background-color: #bd95ff;
-    color: #ffffff;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff4d4f;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .perfil-usuario button:hover {
-    background-color: #2575fc;
-    color: #fff;
-    transform: scale(1.05);
+  background: #e04345;
+  transform: scale(1.02);
 }

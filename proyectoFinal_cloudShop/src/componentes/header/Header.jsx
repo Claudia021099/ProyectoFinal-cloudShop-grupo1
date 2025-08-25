@@ -34,13 +34,13 @@ const Carrito = ({ count }) => (
   </Link>
 );
 
-const Login = () => (
+const Login = ({}) => (
   <Link to="/login">
     <button className='boton-login'><img src={iconLogin} alt="login" className="icono-login" /></button>
   </Link>
 );
 
-export const Header = ({ count }) => {
+export const Header = ({ count, onLogout  }) => {
   return (
     <div className='barra-navegacion'>
       <nav>

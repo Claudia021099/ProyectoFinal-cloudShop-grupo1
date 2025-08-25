@@ -1,66 +1,71 @@
-import { useState } from 'react'
-import { DetallesEnvio } from './DetalleEnvio'
-import { MetodoPago } from './MetodoPago'
-import { Link, Routes, Route, useLocation, Navigate } from 'react-router-dom'
-import './Carrito.css'
-import { CuponInput } from './CuponInput'
+import { useState } from 'react';
+import { DetallesEnvio } from './DetalleEnvio';
+import { MetodoPago } from './MetodoPago';
+import { Link, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import './Carrito.css';
+import { CuponInput } from './CuponInput';
 
-export default function Carrito({ isLoggedIn }) {
+export default function Carrito({ isLoggedIn, cartItems, removerCarrito }) {
   if (!isLoggedIn) {
     return <Navigate to="/login" />;
   }
-  const [productos, setProductos] = useState([]);
+
   const [descuentoAplicado, setDescuentoAplicado] = useState(false);
   const location = useLocation();
 
   const actualizarCantidad = (id, incremento) => {
-    setProductos(productos.map(producto => {
-      if (producto.id === id) {
-        const nuevaCantidad = producto.cantidad + incremento;
-        return nuevaCantidad >= 0
-          ? { ...producto, cantidad: nuevaCantidad }
-          : producto;
-      }
-      return producto;
-    }));
   };
 
-  const subtotal = productos.reduce((total, producto) =>
-    total + (producto.precio * producto.cantidad), 0);
+  const subtotal = cartItems.reduce(
+    (total, item) => total + item.precio * (item.cantidad || 1),
+    0
+  );
 
-  const envio = "Gratis";
-  const descuento = descuentoAplicado ? subtotal * 0.20 : 0;
+  const envio = 'Gratis';
+  const descuento = descuentoAplicado ? subtotal * 0.2 : 0;
   const tarifa = subtotal * 0.05;
   const total = subtotal - descuento + tarifa;
 
   const renderEstrellas = (calificacion) => {
-    return "★".repeat(calificacion) + "☆".repeat(5 - calificacion);
+    return '★'.repeat(calificacion) + '☆'.repeat(5 - calificacion);
   };
 
   const CarritoCompra = () => (
     <div className="carrito-container">
       <div className="carrito-productos">
         <h2>Carrito de Compra</h2>
-        <div className="productos-lista">
-          {productos.map((producto) => (
-            <div key={producto.id} className="producto-item">
-              <img src={producto.imagen} alt={producto.nombre} />
-              <div className="producto-info">
-                <h3>{producto.nombre}</h3>
-                <p>{producto.descripcion}</p>
-                <div className="calificacion">
-                  {renderEstrellas(producto.calificacion)}
-                </div>
-                <p className="precio">${producto.precio}</p>
+        {cartItems.length === 0 ? (
+          <p>El carrito está vacío</p>
+        ) : (
+          cartItems.map((item, index) => (
+            <div key={`${item.id}-${index}`} className="carrito-item">
+              <img
+                className="carrito-item-img"
+                src={item.imageUrl || item.img}
+                alt={item.titulo || item.nombre}
+              />
+              <div className="carrito-contenedor">
+                <h4>{item.titulo || item.nombre}</h4>
+                <p>${item.precio.toFixed(2)}</p>
                 <div className="cantidad-controles">
-                  <button onClick={() => actualizarCantidad(producto.id, -1)}>-</button>
-                  <span>{producto.cantidad}</span>
-                  <button onClick={() => actualizarCantidad(producto.id, 1)}>+</button>
+                  <button onClick={() => actualizarCantidad(item.id, -1)}>
+                    -
+                  </button>
+                  <span>{item.cantidad || 1}</span>
+                  <button onClick={() => actualizarCantidad(item.id, 1)}>
+                    +
+                  </button>
                 </div>
+                <button
+                  className="remover-carrito"
+                  onClick={() => removerCarrito(item.id)}
+                >
+                  ELIMINAR
+                </button>
               </div>
             </div>
-          ))}
-        </div>
+          ))
+        )}
         <div className="botones-accion">
           <Link to="/carrito/envio" className="btn-siguiente">
             Siguiente
@@ -101,34 +106,38 @@ export default function Carrito({ isLoggedIn }) {
   );
 
   return (
-    <>
-      <div className="proceso-compra">
-        <nav className="nav-proceso">
-          <Link
-            to="/carrito"
-            className={`nav-item ${location.pathname === '/carrito' ? 'activo' : ''}`}
-          >
-            Carrito de Compra
-          </Link>
-          <Link
-            to="/carrito/envio"
-            className={`nav-item ${location.pathname === '/carrito/envio' ? 'activo' : ''}`}
-          >
-            Detalles de Envío
-          </Link>
-          <Link
-            to="/carrito/pago"
-            className={`nav-item ${location.pathname === '/carrito/pago' ? 'activo' : ''}`}
-          >
-            Método de Pago
-          </Link>
-        </nav>
-        <Routes>
-          <Route path="/" element={<CarritoCompra />} />
-          <Route path="/envio" element={<DetallesEnvio />} />
-          <Route path="/pago" element={<MetodoPago />} />
-        </Routes>
-      </div>
-    </>
+    <div className="proceso-compra">
+      <nav className="nav-proceso">
+        <Link
+          to="/carrito"
+          className={`nav-item ${
+            location.pathname === '/carrito' ? 'activo' : ''
+          }`}
+        >
+          Carrito de Compra
+        </Link>
+        <Link
+          to="/carrito/envio"
+          className={`nav-item ${
+            location.pathname === '/carrito/envio' ? 'activo' : ''
+          }`}
+        >
+          Detalles de Envío
+        </Link>
+        <Link
+          to="/carrito/pago"
+          className={`nav-item ${
+            location.pathname === '/carrito/pago' ? 'activo' : ''
+          }`}
+        >
+          Método de Pago
+        </Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<CarritoCompra />} />
+        <Route path="/envio" element={<DetallesEnvio />} />
+        <Route path="/pago" element={<MetodoPago />} />
+      </Routes>
+    </div>
   );
 }

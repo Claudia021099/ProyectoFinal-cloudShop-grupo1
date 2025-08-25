@@ -4,15 +4,17 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import "./Login.css";
+import usuarios from "../../data/usuarios";
 
 const schema = yup.object({
   usuario: yup.string().required("El usuario es obligatorio"),
   password: yup.string().required("La contraseña es obligatoria"),
-}).required();
+});
 
-function Login({ isLoggedIn, setIsLoggedIn, setCount }) {
+function Login({ isLoggedIn, setIsLoggedIn, setCount, onLogout }) {
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm({
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(schema),
   });
 
@@ -23,29 +25,47 @@ function Login({ isLoggedIn, setIsLoggedIn, setCount }) {
   }, [setIsLoggedIn]);
 
   const onSubmit = ({ usuario, password }) => {
-    if (usuario === "123" && password === "123") {
+    const user = usuarios.find(
+      (u) => u.usuario === usuario && u.password === password
+    );
+
+    if (user) {
+      reset();
       localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("username", usuario);
+      localStorage.setItem("nombre", user.nombre);
+      localStorage.setItem("email", user.email);
+      localStorage.setItem("edad", user.edad);
       setIsLoggedIn(true);
       navigate("/login");
     } else {
-      alert("Credenciales incorrectas");
+
     }
   };
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("username");
+    localStorage.removeItem("nombre");
+    localStorage.removeItem("email");
+    localStorage.removeItem("edad");
     setIsLoggedIn(false);
     setCount(0);
+    reset();
     navigate("/login");
   };
 
   if (isLoggedIn) {
     return (
       <div className="perfil-usuario">
-        <h1>Bienvenido {localStorage.getItem("username")}</h1>
-        <button onClick={handleLogout}>Logout</button>
+        <ul>
+          <li>Nombre: <span>{localStorage.getItem("nombre")}</span></li>
+          <li>Email: <span>{localStorage.getItem("email")}</span></li>
+          <li>Edad: <span>{localStorage.getItem("edad")}</span></li>
+          <button onClick={() => {
+            handleLogout();
+            onLogout();
+          }}>Logout</button>
+
+        </ul>
       </div>
     );
   }
@@ -59,13 +79,13 @@ function Login({ isLoggedIn, setIsLoggedIn, setCount }) {
           placeholder="Usuario"
           {...register("usuario")}
         />
-        {errors.usuario && <p style={{ color: "red" }}>{errors.usuario.message}</p>}
+        <alert style={{ color: 'red' }}>{errors.usuario?.message}</alert>
         <input
           type="password"
           placeholder="Contraseña"
           {...register("password")}
         />
-        {errors.password && <p style={{ color: "red" }}>{errors.password.message}</p>}
+        <alert style={{ color: 'red' }}>{errors.password?.message}</alert>
         <button type="submit">Login</button>
       </form>
     </div>

@@ -185,7 +185,7 @@ const productos = [
         id: 10,
         img: img10,
         tipo: "LAPTOP",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Acer Chromebook Plus Spin 714",
         descripcion: "A premium 2-in-1 Chromebook with Intel Core Ultra processor, 14-inch 1200p touchscreen, and Thunderbolt 4 ports for versatile connectivity.",
         precio: 699
@@ -257,7 +257,7 @@ const productos = [
         id: 18,
         img: img18,
         tipo: "LAPTOP",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Acer Aspire 14 AI",
         descripcion: "A budget Copilot+ PC with Intel Core Ultra 5 226V, 40 TOPS NPU, and long battery life, ideal for everyday use and AI tasks.",
         precio: 499
@@ -329,7 +329,7 @@ const productos = [
         id: 26,
         img: img26,
         tipo: "DESKTOP",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Corsair Vengeance i7500",
         descripcion: "A high-performance desktop with Intel Core i9-13900K, Nvidia RTX 4090, and 64GB DDR5 RAM, built for gaming and creative workloads.",
         precio: 2999
@@ -419,7 +419,7 @@ const productos = [
         id: 36,
         img: img36,
         tipo: "DESKTOP",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Beelink GTR9 Pro",
         descripcion: "A mini PC with AMD Ryzen AI Max+ 395 processor, 140W performance, and 126 TOPS AI capabilities, ideal for compact workstations.",
         precio: 1099
@@ -509,7 +509,7 @@ const productos = [
         id: 46,
         img: img46,
         tipo: "AUDIO",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Sonos Arc",
         descripcion: "A premium soundbar with Dolby Atmos, voice control, and multi-room audio support for immersive home theater experiences.",
         precio: 899
@@ -599,7 +599,7 @@ const productos = [
         id: 56,
         img: img56,
         tipo: "AUDIO",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Harman Kardon Onyx Studio 8",
         descripcion: "A stylish Bluetooth speaker with rich sound, wireless streaming, and up to 8 hours of battery life.",
         precio: 299
@@ -725,7 +725,7 @@ const productos = [
         id: 70,
         img: img70,
         tipo: "CPU",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "AMD Ryzen 9 7900X",
         descripcion: "A 12-core, 24-thread processor with up to 5.6 GHz, ideal for creators and gamers seeking high performance.",
         precio: 499
@@ -842,7 +842,7 @@ const productos = [
         id: 83,
         img: img83,
         tipo: "GPU",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Nvidia GeForce RTX 4080",
         descripcion: "A powerful GPU with 16GB GDDR6X VRAM, ideal for high-resolution gaming and AI workloads.",
         precio: 1199
@@ -897,9 +897,9 @@ const productos = [
         img: img89,
         tipo: "GPU",
         estado: "",
-        nombre: "Nvidia GeForce RTX 4060 Ti",
+        nombre: "Nvidia GeForce RTX 4060",
         descripcion: "An 8GB GDDR6 GPU for 1080p and 1440p gaming, featuring DLSS 3 and efficient power consumption.",
-        precio: 399
+        precio: 1388.74
     },
     {
         id: 90,
@@ -914,7 +914,7 @@ const productos = [
         id: 91,
         img: img91,
         tipo: "GPU",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "Nvidia GeForce RTX 4060",
         descripcion: "An 8GB GDDR6 GPU optimized for 1080p gaming with DLSS 3 and low power consumption.",
         precio: 299
@@ -977,7 +977,7 @@ const productos = [
         id: 98,
         img: img98,
         tipo: "GPU",
-        estado: "",
+        estado: "DESCUENTO",
         nombre: "AMD Radeon RX 6900 XT",
         descripcion: "A 16GB GDDR6 GPU designed for high-performance 4K gaming and content creation.",
         precio: 799

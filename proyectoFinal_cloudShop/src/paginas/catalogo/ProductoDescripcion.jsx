@@ -1,7 +1,7 @@
-import { useParams, Link, Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import productos from "../../data/productos";
 import "./ProductoDescripcion.css";
+import { useState } from "react";
 
 function Stars({ value = 0 }) {
   const full = Math.floor(value);
@@ -16,9 +16,10 @@ function Stars({ value = 0 }) {
   );
 }
 
-function ProductDescripcion({ onAddToCart, isLoggedIn }) {
+function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
   const { productId } = useParams();
   const navigate = useNavigate();
+  const [imgMostrada, setImgMostrada] = useState(null);
 
   const producto = productos.find((p) => p.id === Number(productId));
   if (!producto) return <div className="notfound">Producto no encontrado</div>;
@@ -30,7 +31,7 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
       navigate("/login");
       return;
     }
-    onAddToCart(producto);
+    agregarCarrito(producto);
   };
 
   return (
@@ -38,9 +39,11 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
       <div className="pd-header">
         <div className="pd-galeria">
           <div className="contenedor-catalogo">
-            {/*imagen en duro */}
-            <img src={producto.img} className='img-descripcion-producto' alt={producto.nombre} />
-            {/* <img src={imgMostrada} alt={producto.nombre} /> */}
+            <img
+              src={imgMostrada || producto.img}
+              className="img-descripcion-producto"
+              alt={producto.nombre}
+            />
           </div>
           {producto.galeria?.length > 0 && (
             <div className="pd-thumbs">
@@ -48,7 +51,7 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
                 <button
                   key={src}
                   className={`thumb ${imgMostrada === src ? "activa" : ""}`}
-                  onClick={() => setImgActiva(src)}
+                  onClick={() => setImgMostrada(src)}
                   aria-label="Vista en miniatura"
                 >
                   <img src={src} alt="miniatura" />
@@ -58,7 +61,6 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
           )}
         </div>
 
-        {/* Detalle del producto */}
         <div className="pd-info">
           <h1 className="pd-titulo">{producto.nombre}</h1>
           <div className="pd-rating">
@@ -67,11 +69,23 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
               {(producto.rating ?? 0).toFixed(1)} • {producto.reseñas?.length ?? 0} reseñas
             </span>
           </div>
+
           <div className="pd-precio">
-            <span className="moneda">{producto.moneda || "S/"}</span>
-            <span className="monto">
-              {(producto.precio ?? 0).toLocaleString()}
-            </span>
+            {producto.estado === "DESCUENTO" ? (
+              <>
+                <p className="monto" style={{ textDecoration: "line-through" }}>
+                  S/. {producto.precio.toFixed(2)}
+                </p>
+                <p className="monto" style={{ color: "red", fontWeight: "bold" }}>
+                  S/. {(producto.precio * 0.8).toFixed(2)}
+                </p>
+              </>
+            ) : (
+              <>
+                <span className="moneda">{producto.moneda || "S/"}</span>
+                <span className="monto">{(producto.precio ?? 0).toLocaleString()}</span>
+              </>
+            )}
           </div>
 
           <p className="pd-descripcion">
@@ -80,18 +94,23 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
           </p>
 
           <div className="pd-cta">
-            <button className="btn-primario" onClick={handleAddToCart}>
-              Agregar carrito
+            <button
+              className="btn-primario"
+              onClick={() => {
+                handleAddToCart();
+                handleClick();
+              }}
+            >
+              Agregar al carrito
             </button>
+
             <button className="btn-like" aria-label="Guardar en favoritos">
               ♡
             </button>
           </div>
-
         </div>
       </div>
 
-      {/* Productos similares: Falta agregar en la Data */}
       {similares.length > 0 && (
         <>
           <h2 className="pd-subtitulo">Productos similares</h2>
@@ -116,7 +135,6 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
         </>
       )}
 
-      {/* Reseñas: falta agregar en la Data*/}
       <h2 className="pd-subtitulo">Reseñas</h2>
       <div className="pd-reseñas">
         {producto.reseñas?.length ? (
@@ -132,7 +150,8 @@ function ProductDescripcion({ onAddToCart, isLoggedIn }) {
                 </div>
               </div>
               <div className="r-stars">
-                {"★".repeat(r.estrellas)}{"☆".repeat(5 - r.estrellas)}
+                {"★".repeat(r.estrellas)}
+                {"☆".repeat(5 - r.estrellas)}
               </div>
               <p className="r-texto">{r.texto}</p>
             </div>
