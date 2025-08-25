@@ -1,4 +1,55 @@
-.caja-nosotros {
-    border: 10px solid #000000;
-    height: 600px;
+.seccion-nube {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.img-banner2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.tarjeta-nube {
+    width: min(900px, 100%);
+    color: #222;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.cabecera-nube {
+    padding: 2%;
+}
+
+.marca-nube h1 {
+    font-size: 1.8rem;
+    color: #2563eb;
+    margin: 0;
+}
+
+.cuerpo-nube {
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.cuerpo-nube h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #111;
+}
+
+.cuerpo-nube h3 {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    color: #2563eb;
+}
+
+.lista-nube {
+    margin: 0.6rem 0 1rem 1.2rem;
+    padding: 0;
+}
+
+.lista-nube li {
+    margin-bottom: 0.4rem;
 }

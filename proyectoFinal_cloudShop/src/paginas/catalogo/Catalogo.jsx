@@ -81,7 +81,7 @@ function Catalogo() {
                 <SwiperSlide key={product.id}>
                   <Link to={`/cpu/${product.id}`} className="slide-producto">
                     <div className="card-producto">
-                      <span class="badge-mas-vendido">Lo más vendido</span>
+                      <span className="badge-mas-vendido">Lo más vendido</span>
                       <img
                         src={product.img}
                         className="imagen-producto-mas-vendido"
@@ -117,7 +117,7 @@ function Catalogo() {
                 <SwiperSlide key={product.id}>
                   <Link to={`/cpu/${product.id}`} className="slide-producto">
                     <div className="card-producto">
-                      <span class="badge-mas-vendido">20% descuento</span>
+                      <span className="badge-mas-vendido">20% descuento</span>
                       <img
                         src={product.img}
                         className="imagen-producto-mas-vendido"
