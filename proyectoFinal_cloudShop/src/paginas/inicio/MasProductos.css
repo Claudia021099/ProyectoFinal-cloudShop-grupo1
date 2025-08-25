@@ -1,0 +1,39 @@
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 1550px;
+  height: 500px; 
+  gap: 20px;
+  padding:5px;
+  
+  
+}
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 10px 8px 18px rgba(0,0,0,0.1);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  left: 200px;
+  display: flex;      
+  flex-direction:column;      
+  align-items: center;         
+  justify-content: center;     
+  padding: 0px;               
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 8px 16px rgba(0,0,0,0.2);
+}
+.card img {
+  width: 150px;
+  height: auto;
+}
+.card:hover img {
+  transform: scale(1.1);
+}
+.card:first-child {
+  grid-column: span 1;
+  grid-row: span 2;    
+}

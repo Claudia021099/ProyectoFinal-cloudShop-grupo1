@@ -16,6 +16,7 @@ import img02 from "../../assets/banner/img2.png";
 import img3 from "../../assets/banner/img3.png";
 import img4 from "../../assets/banner/img4.png";
 import Productos from "./Productos";
+import MasProductos from "./MasProductos";
 
 function Home() {
   const [index, setIndex] = useState(0);
@@ -155,7 +156,9 @@ function Home() {
       <hr style={{ height: "2px", backgroundColor: "black", border: "none" }} />
       <br />
       <h1>Productos en Oferta</h1>
-      <Productos/>
+      <Productos tipo="laptop"/>
+      <h1>Más Productos</h1>
+      <MasProductos tipo="desktop"/>
     </>
   );
 }

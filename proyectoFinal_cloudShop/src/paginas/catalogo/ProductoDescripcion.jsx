@@ -1,4 +1,4 @@
-import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
+ import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import productos from "../../data/productos";
 import "./ProductoDescripcion.css";
 import { useState } from "react";
