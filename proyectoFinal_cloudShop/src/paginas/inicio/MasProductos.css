@@ -1,7 +1,8 @@
 .catalogo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 1550px;
+  width: 100%;
+  max-width:1550px;
   height: 500px; 
   gap: 20px;
   padding:5px;
