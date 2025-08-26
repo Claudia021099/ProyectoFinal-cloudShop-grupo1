@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    padding-bottom: 5%;
 }
 
 .img-banner2 {
@@ -21,11 +21,11 @@
 .cabecera-nube {
     padding: 2%;
 }
-
-.marca-nube h1 {
-    font-size: 1.8rem;
-    color: #2563eb;
-    margin: 0;
+.titulo-nosotros {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
 }
 
 .cuerpo-nube {

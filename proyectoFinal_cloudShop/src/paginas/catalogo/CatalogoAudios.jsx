@@ -6,7 +6,7 @@ function CatalogoAudios() {
     return (
         <>
             <div className="caja-catalogo">
-                <h1>AUDIO</h1><br />
+                <h1>AUDIO</h1>
                 <div className="lista-productos">
                     {productos
                         .filter((product) => product.tipo === "AUDIO")
@@ -19,7 +19,7 @@ function CatalogoAudios() {
                                 <div>
                                     <img src={product.img} className="img-catalogo" alt={product.nombre} />
                                     <h3>{product.nombre}</h3>
-                                    <p>Price: ${product.precio}</p>
+                                    <p>Precio: S/. {product.precio}</p>
                                 </div>
                             </Link>
                         ))}

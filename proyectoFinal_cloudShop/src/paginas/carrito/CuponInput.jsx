@@ -1,25 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export const CuponInput = ({ onDescuentoAplicado }) => {
-  const [cupon, setCupon] = useState("");
-  const [mensajeCupon, setMensajeCupon] = useState("");
+  const [cupon, setCupon] = useState('');
+  const [mensajeCupon, setMensajeCupon] = useState('');
 
   const validarCupon = () => {
-    const codigoRegex = /^I20\d{7}$/; 
-    
-    if (cupon.length !== 10) {
-      setMensajeCupon("El código debe tener 10 caracteres");
-      onDescuentoAplicado(false);
-      return;
-    } 
-    
-    if (codigoRegex.test(cupon)) {
-      setMensajeCupon("¡Descuento de estudiante aplicado!");
-      onDescuentoAplicado(true);
-    } else {
-      setMensajeCupon("Código de estudiante inválido");
-      onDescuentoAplicado(false);
-    }
+    const esValido = /^I20\d{7}$/.test(cupon);
+    setMensajeCupon(esValido 
+      ? '¡Descuento de estudiante aplicado!'
+      : 'Código de estudiante inválido'
+    );
+    onDescuentoAplicado(esValido);
   };
 
   const handleChange = (e) => {
@@ -28,7 +19,7 @@ export const CuponInput = ({ onDescuentoAplicado }) => {
       .replace(/[^A-Z0-9]/g, '')
       .slice(0, 10);
     setCupon(valor);
-    setMensajeCupon("");
+    setMensajeCupon('');
   };
 
   return (

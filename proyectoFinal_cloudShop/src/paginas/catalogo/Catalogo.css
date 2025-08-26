@@ -1,8 +1,4 @@
-.caja-catalogo {
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 20px;
-}
+
 
 .img-atalogo-productos {
   width: 150px;
@@ -45,8 +41,8 @@ a {
 
 .caja-catalogo {
   height: 100%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-top: 0%;
+  padding-bottom: 10%;
   overflow-y: auto;
 }
 

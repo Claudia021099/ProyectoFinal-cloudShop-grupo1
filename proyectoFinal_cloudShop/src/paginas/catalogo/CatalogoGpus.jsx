@@ -19,7 +19,7 @@ function CatalogoGpus() {
                                 <div>
                                     <img src={product.img} className="img-catalogo" alt={product.nombre} />
                                     <h3>{product.nombre}</h3>
-                                    <p>Price: ${product.precio}</p>
+                                    <p>Precio: S/. {product.precio}</p>
                                 </div>
                             </Link>
                         ))}

@@ -8,7 +8,7 @@ export default function Nosotros() {
         <article className="tarjeta-nube">
           <header className="cabecera-nube">
             <div className="marca-nube">
-              <h1>Cloud Shop</h1>
+              <h1 className='titulo-nosotros'>Cloud Shop</h1>
             </div>
           </header>
           <div>
