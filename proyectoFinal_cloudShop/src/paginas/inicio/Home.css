@@ -8,7 +8,7 @@ body{
 
 .banner {
   width: 100%;
-  max-width: 100%;
+  max-width: 1950px;
   height: 600px;
   top: 20px;
   position: relative;
@@ -59,6 +59,11 @@ body{
     max-width: 95px;
     border-radius: 10px;
 }
+.pre{
+    background-color: black;
+    width: 100px;
+    border-radius: 10px;
+}
 h1 {
   text-align: center;
   color: #042b54;
@@ -107,6 +112,7 @@ h3 {
   height: 200px;
   margin: 20px auto;
   display: block;
+  padding: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
 
 }
@@ -127,50 +133,59 @@ h3 {
 }
 
 @media (max-width: 1024px) {
+  .laptops img{
+    width: 200px;
+    height: 350px;
+  }
+}
+@media (max-width: 1024px) {
   .img2 {
-    width: 300px;
-    left: 50px;
+    width: 200px;
+    left: 30px;
     top: 20px;
   }
 
   .laptops {
-    left: 50%;
+    left: 580px;
     transform: translateX(-50%);
-    top: 150px;
-    gap: 20px;
+    top: 180px;
   }
 
   .logos {
-    gap: 100px;
+    gap: 190px;
     top: 20px;
+    left: 250px;
   }
 
   .descript {
-    flex-direction: column;
+    flex-direction:initial;
     gap: 10px;
-    font-size: 14px;
+    font-size: 10px;
+    left: 300px;
+    width: 600px;
   }
 
   .ver,
   .btn1 {
-    top: 480px;
+    top: 490px;
     font-size: 16px;
-    width: 160px;
+    width: 130px;
+    left: 125px;
   }
 }
 @media (max-width: 768px) {
   .banner {
     height: auto;
+    max-width: 100%;
   }
 
   .img2 {
     position: relative;
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
     left: 0;
     top: 0;
   }
-
   .laptops,
   .logos,
   .descript {
