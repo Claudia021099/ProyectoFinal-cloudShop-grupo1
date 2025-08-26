@@ -1,22 +1,33 @@
 import { useState } from 'react';
 import { DetallesEnvio } from './DetalleEnvio';
 import { MetodoPago } from './MetodoPago';
-import { Link, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './Carrito.css';
 import { CuponInput } from './CuponInput';
 
-export default function Carrito({ isLoggedIn, cartItems, removerCarrito }) {
-  if (!isLoggedIn) {
-    return <Navigate to="/login" />;
-  }
-
+export default function Carrito({ cartItems, removerCarrito }) {
   const [descuentoAplicado, setDescuentoAplicado] = useState(false);
+  const [items, setItems] = useState(cartItems);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const actualizarCantidad = (id, incremento) => {
+    setItems((prevItems) =>
+      prevItems.map((item) => {
+        if (item.id === id) {
+          const nuevaCantidad = (item.cantidad || 1) + incremento;
+          // Evitar cantidades negativas
+          return {
+            ...item,
+            cantidad: nuevaCantidad > 0 ? nuevaCantidad : 1,
+          };
+        }
+        return item;
+      })
+    );
   };
 
-  const subtotal = cartItems.reduce(
+  const subtotal = items.reduce(
     (total, item) => total + item.precio * (item.cantidad || 1),
     0
   );
@@ -30,14 +41,25 @@ export default function Carrito({ isLoggedIn, cartItems, removerCarrito }) {
     return '★'.repeat(calificacion) + '☆'.repeat(5 - calificacion);
   };
 
+  const handleRemoverItem = (id) => {
+    // Actualizar estado local
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    // Actualizar estado global
+    removerCarrito(id);
+  };
+
+  const handleCancelar = () => {
+    navigate('/catalogo');
+  };
+
   const CarritoCompra = () => (
     <div className="carrito-container">
       <div className="carrito-productos">
         <h2>Carrito de Compra</h2>
-        {cartItems.length === 0 ? (
+        {items.length === 0 ? (
           <p>El carrito está vacío</p>
         ) : (
-          cartItems.map((item, index) => (
+          items.map((item, index) => (
             <div key={`${item.id}-${index}`} className="carrito-item">
               <img
                 className="carrito-item-img"
@@ -58,7 +80,7 @@ export default function Carrito({ isLoggedIn, cartItems, removerCarrito }) {
                 </div>
                 <button
                   className="remover-carrito"
-                  onClick={() => removerCarrito(item.id)}
+                  onClick={() => handleRemoverItem(item.id)} // Cambiar aquí
                 >
                   ELIMINAR
                 </button>
@@ -70,7 +92,9 @@ export default function Carrito({ isLoggedIn, cartItems, removerCarrito }) {
           <Link to="/carrito/envio" className="btn-siguiente">
             Siguiente
           </Link>
-          <button className="btn-cancelar">Cancelar</button>
+          <button className="btn-cancelar" onClick={handleCancelar}>
+            Cancelar
+          </button>
         </div>
       </div>
 
