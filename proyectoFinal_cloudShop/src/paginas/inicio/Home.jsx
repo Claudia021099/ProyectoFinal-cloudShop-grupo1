@@ -162,23 +162,25 @@ function Home() {
       <br />
       <br />
       <hr style={{ height: "2px", backgroundColor: "black", border: "none" }} />
-      <br />
-      <h1>Productos en Oferta</h1>
-            <Products tipo="cpu"/>
+      <h1>GPU</h1>
+      <Products tipo="cpu" />
       <Link to="/audio">
-      <img className="foto" src={foto} alt="img" style={{ cursor: "pointer" }} />
-    </Link>
-      
+        <img className="foto" src={foto} alt="img" style={{ cursor: "pointer" }} />
+      </Link>
+
       <h1>Productos en Oferta</h1>
-      <Productos tipo="laptop"/>
+      <Productos tipo="laptop" />
+      <h1>CPU</h1>
       <Link to="/cpu">
-      <img className="cpu" src={cpu} alt="img" style={{ cursor: "pointer" }} />
-    </Link>
-      
+        <img className="cpu" src={cpu} alt="img" style={{ cursor: "pointer" }} />
+      </Link>
+
 
       <h1>Más Productos</h1>
-      <MasProductos tipo="desktop"/>
-      
+      <MasProductos tipo="desktop" />
+      <br />
+      <br />
+
     </>
   );
 }
