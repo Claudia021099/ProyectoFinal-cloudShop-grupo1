@@ -5,20 +5,6 @@ import { useState, useRef } from "react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
-function Stars({ value = 0 }) {
-  const full = Math.floor(value);
-  const half = value - full >= 0.5;
-  const empty = 5 - full - (half ? 1 : 0);
-  return (
-    <span className="stars" aria-label={`Rating ${value} de 5`}>
-      {"★".repeat(full)}
-      {half ? "☆" : ""}
-      {"☆".repeat(empty)}
-    </span>
-  );
-}
-
 function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
   const { productId } = useParams();
   const navigate = useNavigate();
@@ -42,7 +28,6 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
   const scrollThumbs = (dir = 1) => {
     thumbsRef.current?.scrollBy({ left: dir * 220, behavior: "smooth" });
   };
-
   return (
     <div className="producto-descripcion">
       <div className="pd-header">
@@ -94,10 +79,10 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
         <div className="pd-info">
           <h1 className="pd-titulo">{producto.nombre}</h1>
 
-          <div className="r-stars">
+          <div className="stars">
             {(() => {
               const promedio = producto.resenias.reduce((acc, r) => acc + r.estrellas, 0) / producto.resenias.length;
-              const estrellasLlenas = Math.round(promedio); // redondea al entero más cercano
+              const estrellasLlenas = Math.round(promedio); 
               return (
                 <>
                   {"★".repeat(estrellasLlenas)}
@@ -148,7 +133,7 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
         </div>
       </div>
 
-      <h1 className="titulo-seccion">Productos Similares</h1>
+      <h1 className="pd-similares">Productos Similares</h1>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
@@ -158,12 +143,12 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1224: { slidesPerView: 4 },
-          1440: { slidesPerView: 5 }
+          640: { slidesPerView: 2, spaceBetween:16 },
+          1024: { slidesPerView: 3, spaceBetween:16 },
+          1224: { slidesPerView: 4, spaceBetween:16 },
+          1440: { slidesPerView: 5, spaceBetween:16 }
         }}
-        className="carrusel-mas-vendidos"
+        className="productos-similares"
       >
         {similares.map((product) => (
             <SwiperSlide key={product.id}>
@@ -171,14 +156,14 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
                 <div className="card-producto">
                   <img
                     src={product.img}
-                    className="imagen-producto-mas-vendido"
+                    className="imagen-productos-similares"
                     alt={product.nombre}
                   />
                   <h3>{product.nombre}</h3>
-                  <div className="r-stars">
+                  <div className="stars">
                     {(() => {
                       const promedio = product.resenias.reduce((acc, r) => acc + r.estrellas, 0) / product.resenias.length;
-                      const estrellasLlenas = Math.round(promedio); // redondea al entero más cercano
+                      const estrellasLlenas = Math.round(promedio);
                       return (
                         <>
                           {"★".repeat(estrellasLlenas)}
@@ -195,26 +180,26 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
       </Swiper>
 
       <h2 className="pd-subtitulo">Reseñas</h2>
-      <div className="pd-reseñas">
+      <div className="pd-resenias">
         {producto.resenias?.length ? (
           producto.resenias.map((resenia, index) => (
-            <div key={index} className="card-reseña">
-              <div className="r-header">
-                <div className="r-avatar" aria-hidden>👤</div>
-                <div>
-                  <strong>{resenia.autor}</strong>
-                  <div className="r-meta">{resenia.fecha}</div>
+            <div key={index} className="card-resenia">
+              <div className="resenia-left">
+                <div className="resenia-avatar">👤</div>
+                <div className="resenia-info">
+                  <strong className="resenia-name">{resenia.autor}</strong>
+                  <div className="resenia-time">{resenia.fecha}</div>
+                  <div className="stars">
+                    {"★".repeat(resenia.estrellas)}
+                    {"☆".repeat(5 - resenia.estrellas)}
+                  </div>
                 </div>
               </div>
-              <div className="r-stars">
-                {"★".repeat(resenia.estrellas)}
-                {"☆".repeat(5 - resenia.estrellas)}
-              </div>
-              <p className="r-texto">{resenia.comentario}</p>
+              <p className="resenia-comentario">{resenia.comentario}</p>
             </div>
           ))
         ) : (
-          <div className="card-reseña">Sé el primero en opinar.</div>
+          <div className="card-resenia">Sé el primero en opinar.</div>
         )}
       </div>
     </div>
