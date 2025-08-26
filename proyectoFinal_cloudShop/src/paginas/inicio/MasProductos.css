@@ -2,39 +2,73 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  max-width:1550px;
-  height: 500px; 
+  max-width: 1500px;
+  margin: 0 auto; /* Centra el contenedor */
   gap: 20px;
-  padding:5px;
-  
-  
+  padding: 10px;
 }
+
 .card {
   background: #fff;
   border-radius: 20px;
-  box-shadow: 10px 8px 18px rgba(0,0,0,0.1);
+  box-shadow: 10px 8px 18px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
-  position: relative;
-  left: 200px;
-  display: flex;      
-  flex-direction:column;      
-  align-items: center;         
-  justify-content: center;     
-  padding: 0px;               
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 10px 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.2);
 }
+
 .card img {
   width: 150px;
   height: auto;
+  transition: transform 0.3s ease;
 }
+
 .card:hover img {
   transform: scale(1.1);
 }
+
+/* ✅ El primer card ocupa más espacio en pantallas grandes */
 .card:first-child {
   grid-column: span 1;
-  grid-row: span 2;    
+  grid-row: span 2;
+}
+
+/* ✅ Responsive: tablets */
+@media (max-width: 1024px) {
+  .catalogo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:first-child {
+    grid-row: auto;
+  }
+}
+
+/* ✅ Responsive: móviles */
+@media (max-width: 768px) {
+  .catalogo {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card img {
+    width: 120px;
+  }
+}
+
+/* ✅ Extra: móviles pequeños */
+@media (max-width: 480px) {
+  .card img {
+    width: 100px;
+  }
 }
