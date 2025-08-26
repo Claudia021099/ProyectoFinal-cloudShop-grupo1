@@ -1,11 +1,13 @@
-
 .carrusel-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 1500px;
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
+  padding: 20px 0 25px 0;
+  overflow: hidden;
 }
-
 .custom-prev,
 .custom-next {
   position: absolute;
@@ -22,43 +24,44 @@
   cursor: pointer;
   z-index: 10;
   font-size: 22px;
+  transition: background-color 0.3s ease;
 }
 
 .custom-prev {
-  left: -60px;
+  left: 10px;
 }
 
 .custom-next {
-  right: -60px;
+  right: 10px;
 }
 
 .custom-prev:hover,
 .custom-next:hover {
-  background-color: #042b54; 
+  background-color: #042b54;
 }
-
 .producto-card {
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   padding: 10px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.producto-img {
-  width: 350px;
-  object-fit: cover;
-  padding: 5px;
-  transition: transform 0.3s ease;
+  background: #fff;
 }
 
 .producto-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+
 .producto-card:hover img {
   transform: scale(1.1);
+}
+.producto-img {
+  width: 100%;
+  max-width: 350px;
+  object-fit: cover;
+  padding: 5px;
+  transition: transform 0.3s ease;
 }
 .producto-nombre {
   font-weight: bold;
@@ -71,8 +74,50 @@
   margin-bottom: 5px;
 }
 
-.precio{
+.precio {
   font-size: 14px;
   font-weight: bold;
   color: #1a73e8;
+}
+
+@media (max-width: 1024px) {
+  .producto-img {
+    max-width: 280px;
+  }
+
+  .custom-prev {
+    left: 5px;
+  }
+
+  .custom-next {
+    right: 5px;
+  }
+}
+@media (max-width: 768px) {
+  .carrusel-container {
+    padding: 10px;
+  }
+
+  .producto-img {
+    max-width: 220px;
+  }
+
+  .custom-prev,
+  .custom-next {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .producto-img {
+    max-width: 180px;
+  }
+
+  .custom-prev,
+  .custom-next {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 }
