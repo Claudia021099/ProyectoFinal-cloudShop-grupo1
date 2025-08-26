@@ -112,8 +112,7 @@ const productos = [
     resenias: [
       { autor: "María", fecha: "15/07/2025", estrellas: 5, comentario: "Pantalla OLED increíble para edición; colores muy precisos." },
       { autor: "Luis", fecha: "01/08/2025", estrellas: 4, comentario: "En Premiere exporta rápido; la batería cae con tareas pesadas." },
-      { autor: "Camila", fecha: "22/05/2025", estrellas: 3, comentario: "Base se calienta tras largas sesiones; compré un cooler y ok." },
-      { autor: "Renato", fecha: "05/08/2025", estrellas: 5, comentario: "Teclado cómodo y chasis sólido; ideal para Blender y Photoshop." }
+      { autor: "Camila", fecha: "22/05/2025", estrellas: 3, comentario: "Base se calienta tras largas sesiones; compré un cooler y ok." }
     ]
   },
   {
@@ -130,6 +129,7 @@ const productos = [
   {
     id: 3,
     img: img3,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Dell XPS 14 Premium",
@@ -137,7 +137,6 @@ const productos = [
     precio: 1499,
     resenias: [
       { autor: "Jorge", fecha: "09/04/2025", estrellas: 4, comentario: "Pantalla nítida y buen teclado; batería ~8 h en oficina." },
-      { autor: "Daniela", fecha: "21/06/2025", estrellas: 5, comentario: "Silenciosa en tareas normales, rápida con Lightroom." },
       { autor: "Gonzalo", fecha: "02/03/2025", estrellas: 3, comentario: "Se oye el ventilador exportando video, nada grave." },
       { autor: "Sofía", fecha: "27/07/2025", estrellas: 4, comentario: "Ligera y con buenos puertos; cargador algo grande." }
     ]
@@ -145,6 +144,7 @@ const productos = [
   {
     id: 4,
     img: img4,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Lenovo Yoga 9i 2-in-1 (Gen 10)",
@@ -155,6 +155,7 @@ const productos = [
   {
     id: 5,
     img: img5,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Asus Zenbook 14 OLED",
@@ -168,6 +169,7 @@ const productos = [
   {
     id: 6,
     img: img6,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Acer Swift Go 14 (2024)",
@@ -182,6 +184,7 @@ const productos = [
   {
     id: 7,
     img: img7,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "HP Chromebook Plus 15.6-inch",
@@ -197,6 +200,7 @@ const productos = [
   {
     id: 8,
     img: img8,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Asus ROG Zephyrus G14 (2025)",
@@ -206,24 +210,25 @@ const productos = [
       { autor: "Valentina", fecha: "03/06/2025", estrellas: 5, comentario: "120 Hz + OLED: juegos se ven espectaculares." },
       { autor: "Pedro", fecha: "12/07/2025", estrellas: 4, comentario: "Batería justa jugando (~2.5 h), normal para gaming." },
       { autor: "Andrés", fecha: "22/05/2025", estrellas: 3, comentario: "Se calienta en sesiones largas; base ventilada ayuda." },
-      { autor: "Lucía", fecha: "01/08/2025", estrellas: 5, comentario: "Portátil y potente; perfecto para viajar y jugar." }
     ]
   },
   {
     id: 9,
     img: img9,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "LO MAS VENDIDO",
     nombre: "Microsoft Surface Laptop 7th Edition 15",
     descripcion: "A Copilot+ PC with Qualcomm Snapdragon X Elite, 120Hz display, and exceptional battery life, designed for Windows 11 AI features and productivity.",
     precio: 1399,
     resenias: [
-      { autor: "Sofía", fecha: "25/07/2025", estrellas: 5, comentario: "Teclado cómodo y cámaras excelentes para videollamadas." }
+      { autor: "Sofía", fecha: "25/07/2025", estrellas: 3, comentario: "Teclado cómodo y cámaras excelentes para videollamadas." }
     ]
   },
   {
     id: 10,
     img: img10,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "DESCUENTO",
     nombre: "Acer Chromebook Plus Spin 714",
@@ -239,6 +244,7 @@ const productos = [
   {
     id: 11,
     img: img11,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Samsung Galaxy Chromebook Plus",
@@ -253,6 +259,7 @@ const productos = [
   {
     id: 12,
     img: img12,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Lenovo Chromebook Plus 14",
@@ -266,6 +273,7 @@ const productos = [
   {
     id: 13,
     img: img13,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Dell Precision 5690",
@@ -278,6 +286,7 @@ const productos = [
   {
     id: 14,
     img: img14,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "LO MAS VENDIDO",
     nombre: "Asus Vivobook S 14",
@@ -291,6 +300,7 @@ const productos = [
   {
     id: 15,
     img: img15,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "HP ZBook Fury 16 G11",
@@ -306,6 +316,7 @@ const productos = [
   {
     id: 16,
     img: img16,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Framework Laptop 13 (2025)",
@@ -320,6 +331,7 @@ const productos = [
   {
     id: 17,
     img: img17,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Lenovo Yoga Pro 9i 16 Gen 9",
@@ -333,6 +345,7 @@ const productos = [
   {
     id: 18,
     img: img18,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "DESCUENTO",
     nombre: "Acer Aspire 14 AI",
@@ -346,6 +359,7 @@ const productos = [
   {
     id: 19,
     img: img19,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Asus ProArt PX13",
@@ -360,6 +374,7 @@ const productos = [
   {
     id: 20,
     img: img20,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "LAPTOP",
     estado: "",
     nombre: "Apple MacBook Air M4 15-inch",
@@ -378,6 +393,7 @@ const productos = [
   {
     id: 21,
     img: img21,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Framework Desktop",
@@ -390,6 +406,7 @@ const productos = [
   {
     id: 22,
     img: img22,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Dell XPS Desktop 8960",
@@ -403,6 +420,7 @@ const productos = [
   {
     id: 23,
     img: img23,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "LO MAS VENDIDO",
     nombre: "HP Omen 45L",
@@ -416,6 +434,7 @@ const productos = [
   {
     id: 24,
     img: img24,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Lenovo Legion Tower 7i",
@@ -430,6 +449,7 @@ const productos = [
   {
     id: 25,
     img: img25,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Alienware Aurora R16",
@@ -444,6 +464,7 @@ const productos = [
   {
     id: 26,
     img: img26,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "DESCUENTO",
     nombre: "Corsair Vengeance i7500",
@@ -459,6 +480,7 @@ const productos = [
   {
     id: 27,
     img: img27,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "MSI Aegis RS2",
@@ -471,6 +493,7 @@ const productos = [
   {
     id: 28,
     img: img28,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "LO MAS VENDIDO",
     nombre: "ASUS ROG Strix G16",
@@ -484,6 +507,7 @@ const productos = [
   {
     id: 29,
     img: img29,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "CyberPowerPC Gamer Supreme",
@@ -497,6 +521,7 @@ const productos = [
   {
     id: 30,
     img: img30,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "iBuyPower SlateMesh",
@@ -511,6 +536,7 @@ const productos = [
   {
     id: 31,
     img: img31,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "NZXT Player: Three",
@@ -525,6 +551,7 @@ const productos = [
   {
     id: 32,
     img: img32,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Acer Predator Orion 7000",
@@ -535,6 +562,7 @@ const productos = [
   {
     id: 33,
     img: img33,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Maingear MG-1",
@@ -547,6 +575,7 @@ const productos = [
   {
     id: 34,
     img: img34,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Origin PC Chronos",
@@ -562,6 +591,7 @@ const productos = [
   {
     id: 35,
     img: img35,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "LO MAS VENDIDO",
     nombre: "HP Envy TE01",
@@ -577,6 +607,7 @@ const productos = [
   {
     id: 36,
     img: img36,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "DESCUENTO",
     nombre: "Beelink GTR9 Pro",
@@ -591,6 +622,7 @@ const productos = [
   {
     id: 37,
     img: img37,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Lenovo ThinkStation P3",
@@ -603,6 +635,7 @@ const productos = [
   {
     id: 38,
     img: img38,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Dell Inspiron Desktop 3030",
@@ -616,6 +649,7 @@ const productos = [
   {
     id: 39,
     img: img39,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "ASUS ExpertCenter D9",
@@ -630,6 +664,7 @@ const productos = [
   {
     id: 40,
     img: img40,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "DESKTOP",
     estado: "",
     nombre: "Acer Aspire TC-1780",
@@ -646,6 +681,7 @@ const productos = [
   {
     id: 41,
     img: img41,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Bose QuietComfort Ultra Headphones",
@@ -658,6 +694,7 @@ const productos = [
   {
     id: 42,
     img: img42,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Sony WH-1000XM5",
@@ -668,6 +705,7 @@ const productos = [
   {
     id: 43,
     img: img43,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "LO MAS VENDIDO",
     nombre: "Apple AirPods Pro 2",
@@ -680,6 +718,7 @@ const productos = [
   {
     id: 44,
     img: img44,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "JBL Live 770NC",
@@ -693,6 +732,7 @@ const productos = [
   {
     id: 45,
     img: img45,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Sennheiser Momentum 4 Wireless",
@@ -707,6 +747,7 @@ const productos = [
   {
     id: 46,
     img: img46,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "DESCUENTO",
     nombre: "Sonos Arc",
@@ -722,6 +763,7 @@ const productos = [
   {
     id: 47,
     img: img47,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "LO MAS VENDIDO",
     nombre: "Bose SoundLink Flex",
@@ -737,6 +779,7 @@ const productos = [
   {
     id: 48,
     img: img48,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "JBL Charge 5",
@@ -752,6 +795,7 @@ const productos = [
   {
     id: 49,
     img: img49,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Sony SRS-XG300",
@@ -767,6 +811,7 @@ const productos = [
   {
     id: 50,
     img: img50,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Anker Soundcore Motion X600",
@@ -780,6 +825,7 @@ const productos = [
   {
     id: 51,
     img: img51,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Bang & Olufsen Beoplay A9",
@@ -795,6 +841,7 @@ const productos = [
   {
     id: 52,
     img: img52,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Sennheiser Ambeo Soundbar Mini",
@@ -810,6 +857,7 @@ const productos = [
   {
     id: 53,
     img: img53,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Sony WF-1000XM5",
@@ -824,6 +872,7 @@ const productos = [
   {
     id: 54,
     img: img54,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Bose SoundLink Revolve+ II",
@@ -836,6 +885,7 @@ const productos = [
   {
     id: 55,
     img: img55,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "LO MAS VENDIDO",
     nombre: "JBL Flip 6",
@@ -851,6 +901,7 @@ const productos = [
   {
     id: 56,
     img: img56,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "DESCUENTO",
     nombre: "Harman Kardon Onyx Studio 8",
@@ -866,6 +917,7 @@ const productos = [
   {
     id: 57,
     img: img57,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Ultimate Ears Boom 3",
@@ -881,6 +933,7 @@ const productos = [
   {
     id: 58,
     img: img58,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Sonos Roam 2",
@@ -895,6 +948,7 @@ const productos = [
   {
     id: 59,
     img: img59,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "Bose QuietComfort Earbuds",
@@ -908,6 +962,7 @@ const productos = [
   {
     id: 60,
     img: img60,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "AUDIO",
     estado: "",
     nombre: "JBL Bar 9.1",
@@ -923,6 +978,7 @@ const productos = [
   {
     id: 61,
     img: img61,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "LO MAS VENDIDO",
     nombre: "Intel Core i9-14900K",
@@ -936,6 +992,7 @@ const productos = [
   {
     id: 62,
     img: img62,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "AMD Ryzen 9 7950X3D",
@@ -946,6 +1003,7 @@ const productos = [
   {
     id: 63,
     img: img63,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core Ultra 9 285K",
@@ -960,6 +1018,7 @@ const productos = [
   {
     id: 64,
     img: img64,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "AMD Ryzen 7 7800X3D",
@@ -972,6 +1031,7 @@ const productos = [
   {
     id: 65,
     img: img65,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core i7-14700K",
@@ -986,6 +1046,7 @@ const productos = [
   {
     id: 66,
     img: img66,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "AMD Ryzen AI Max+ 395",
@@ -999,6 +1060,7 @@ const productos = [
   {
     id: 67,
     img: img67,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "LO MAS VENDIDO",
     nombre: "Intel Core i5-14600K",
@@ -1009,6 +1071,7 @@ const productos = [
   {
     id: 68,
     img: img68,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "AMD Ryzen 5 7600X",
@@ -1021,6 +1084,7 @@ const productos = [
   {
     id: 69,
     img: img69,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core Ultra 7 265K",
@@ -1034,6 +1098,7 @@ const productos = [
   {
     id: 70,
     img: img70,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "DESCUENTO",
     nombre: "AMD Ryzen 9 7900X",
@@ -1047,6 +1112,7 @@ const productos = [
   {
     id: 71,
     img: img71,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core i9-13900K",
@@ -1057,6 +1123,7 @@ const productos = [
   {
     id: 72,
     img: img72,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "LO MAS VENDIDO",
     nombre: "AMD Ryzen 7 7700X",
@@ -1069,6 +1136,7 @@ const productos = [
   {
     id: 73,
     img: img73,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core i5-13600K",
@@ -1082,6 +1150,7 @@ const productos = [
   {
     id: 74,
     img: img74,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "AMD Ryzen 5 9600X",
@@ -1096,6 +1165,7 @@ const productos = [
   {
     id: 75,
     img: img75,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core Ultra 5 245K",
@@ -1106,6 +1176,7 @@ const productos = [
   {
     id: 76,
     img: img76,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "LO MAS VENDIDO",
     nombre: "AMD Ryzen 9 9900X",
@@ -1118,6 +1189,7 @@ const productos = [
   {
     id: 77,
     img: img77,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core i7-13700K",
@@ -1131,6 +1203,7 @@ const productos = [
   {
     id: 78,
     img: img78,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "AMD Ryzen 5 8600G",
@@ -1144,6 +1217,7 @@ const productos = [
   {
     id: 79,
     img: img79,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "Intel Core i9-12900K",
@@ -1156,6 +1230,7 @@ const productos = [
   {
     id: 80,
     img: img80,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "CPU",
     estado: "",
     nombre: "AMD Ryzen 7 8700G",
@@ -1170,6 +1245,7 @@ const productos = [
   {
     id: 81,
     img: img81,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 4090",
@@ -1182,6 +1258,7 @@ const productos = [
   {
     id: 82,
     img: img82,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 7900 XTX",
@@ -1195,6 +1272,7 @@ const productos = [
   {
     id: 83,
     img: img83,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "DESCUENTO",
     nombre: "Nvidia GeForce RTX 4080",
@@ -1207,6 +1285,7 @@ const productos = [
   {
     id: 84,
     img: img84,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 7900 XT",
@@ -1220,6 +1299,7 @@ const productos = [
   {
     id: 85,
     img: img85,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 4070 Ti",
@@ -1234,6 +1314,7 @@ const productos = [
   {
     id: 86,
     img: img86,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 7800 XT",
@@ -1246,6 +1327,7 @@ const productos = [
   {
     id: 87,
     img: img87,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 4070",
@@ -1258,6 +1340,7 @@ const productos = [
   {
     id: 88,
     img: img88,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 7700 XT",
@@ -1271,6 +1354,7 @@ const productos = [
   {
     id: 89,
     img: img89,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 4060",
@@ -1281,6 +1365,7 @@ const productos = [
   {
     id: 90,
     img: img90,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 7600",
@@ -1296,6 +1381,7 @@ const productos = [
   {
     id: 91,
     img: img91,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "DESCUENTO",
     nombre: "Nvidia GeForce RTX 4060",
@@ -1308,6 +1394,7 @@ const productos = [
   {
     id: 92,
     img: img92,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 6700 XT",
@@ -1323,6 +1410,7 @@ const productos = [
   {
     id: 93,
     img: img93,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 3090",
@@ -1336,6 +1424,7 @@ const productos = [
   {
     id: 94,
     img: img94,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 6800 XT",
@@ -1350,6 +1439,7 @@ const productos = [
   {
     id: 95,
     img: img95,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 3080",
@@ -1360,6 +1450,7 @@ const productos = [
   {
     id: 96,
     img: img96,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 6950 XT",
@@ -1375,6 +1466,7 @@ const productos = [
   {
     id: 97,
     img: img97,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 3070 Ti",
@@ -1387,6 +1479,7 @@ const productos = [
   {
     id: 98,
     img: img98,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "DESCUENTO",
     nombre: "AMD Radeon RX 6900 XT",
@@ -1400,6 +1493,7 @@ const productos = [
   {
     id: 99,
     img: img99,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "Nvidia GeForce RTX 3060 Ti",
@@ -1415,6 +1509,7 @@ const productos = [
   {
     id: 100,
     img: img100,
+    galeria: [img1, img2, img3, img4, img5, img6],
     tipo: "GPU",
     estado: "",
     nombre: "AMD Radeon RX 6950 XT",
