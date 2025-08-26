@@ -3,7 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   max-width: 1500px;
-  margin: 0 auto; /* Centra el contenedor */
+  margin: 0 auto;
   gap: 20px;
   padding: 10px;
 }
@@ -36,14 +36,11 @@
 .card:hover img {
   transform: scale(1.1);
 }
-
-/* ✅ El primer card ocupa más espacio en pantallas grandes */
 .card:first-child {
   grid-column: span 1;
   grid-row: span 2;
 }
 
-/* ✅ Responsive: tablets */
 @media (max-width: 1024px) {
   .catalogo {
     grid-template-columns: repeat(2, 1fr);
@@ -53,8 +50,6 @@
     grid-row: auto;
   }
 }
-
-/* ✅ Responsive: móviles */
 @media (max-width: 768px) {
   .catalogo {
     grid-template-columns: 1fr;
@@ -65,8 +60,6 @@
     width: 120px;
   }
 }
-
-/* ✅ Extra: móviles pequeños */
 @media (max-width: 480px) {
   .card img {
     width: 100px;

@@ -101,8 +101,6 @@ h3 {
 .btn1:hover {
   background: #f7f7f7;
 }
-
-/* Imágenes grandes */
 .foto {
   width: 100%;
   max-width: 1500px;
@@ -128,11 +126,6 @@ h3 {
   box-shadow: 10px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* ============================
-   RESPONSIVE (Media Queries)
-   ============================ */
-
-/* Tablets */
 @media (max-width: 1024px) {
   .img2 {
     width: 300px;
@@ -165,8 +158,6 @@ h3 {
     width: 160px;
   }
 }
-
-/* Móviles */
 @media (max-width: 768px) {
   .banner {
     height: auto;
@@ -211,8 +202,6 @@ h3 {
     padding: 0;
   }
 }
-
-/* Muy pequeños */
 @media (max-width: 480px) {
   .img2 {
     width: 70%;
