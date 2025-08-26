@@ -15,13 +15,6 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
 
   const similares = productos.filter((p) => p.tipo === producto.tipo);
 
-  const handleAddToCart = () => {
-    if (!isLoggedIn) {
-      navigate("/login");
-      return;
-    }
-    agregarCarrito(producto);
-  };
 
   const thumbsRef = useRef(null);
   const scrollThumbs = (dir = 1) => {
@@ -109,7 +102,7 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
               </>
             ) : (
               <>
-                <span className="moneda">{producto.moneda || "S/"}</span>
+                <span className="moneda">{producto.moneda || "S/. "}</span>
                 <span className="monto">{Number(producto.precio ?? 0).toLocaleString()}</span>
               </>
             )}
@@ -122,7 +115,7 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
             <button
               className="btn-primario"
               onClick={() => {
-                handleAddToCart();
+                agregarCarrito(producto);
                 handleClick?.();
               }}
             >
