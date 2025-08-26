@@ -9,29 +9,33 @@
   grid-template-columns: 1.1fr 1fr;
   gap: 28px;
 }
-.pd-galeria .pd-imagen {
-  background: #fff;
+.pd-galeria {
   border: 1px solid #e2e8f0;
   border-radius: 16px;
+}
+.pd-galeria .pd-imagen {
+  background: #fff;
+  border-radius: 16px;
   padding: 16px;
-  text-align: center;
+  place-items: center;
+  height: clamp(280px, 38vw, 440px)
 }
-.pd-galeria .pd-imagen img {
-  max-width: 100%;
-  height: auto;
+.pd-galeria .pd-imagen img, .img-descripcion-producto {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  display: block;
 }
-
 .pd-info .pd-titulo {
   text-align: left;
   font-size: 24px;
   line-height: 1.25;
   margin: 0 0 8px;
 }
-
 .stars { color: #f59e0b; font-size: 18px; }
 .pd-rating { display: flex; align-items: center; gap: 8px; color: #475569; }
-
 .pd-precio {
   margin: 14px 0 10px;
   font-size: 28px;
@@ -122,10 +126,63 @@
   .pd-specs li strong { width: 160px; }
   .pd-similares { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 } 
-.img-descripcion-producto {
+.pd-galeria .pd-imagen .pd-img {
   width: 100%;
-  height: 500px;
-  object-fit: contain;  
-  border: 3px solid #d9d9d9;
-  border-radius: 25px;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border: 0;   
+  border-radius: 0;
 }
+.pd-thumbs-wrapper {
+  position: relative;
+  max-width: 740px;
+  margin: 12px auto 0;
+}
+.pd-thumbs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 90px;  
+  gap: 10px;
+  overflow-x: auto;
+  padding: 6px 36px;  
+  scroll-behavior: smooth;
+}
+.pd-thumbs::-webkit-scrollbar { display: none; }
+.pd-thumbs { -ms-overflow-style: none; scrollbar-width: none; }
+.thumb {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 6px;
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .12s ease;
+}
+.thumb:hover { transform: translateY(-1px); }
+.thumb.activa {
+  border-color: #0d47a1;
+  box-shadow: 0 0 0 2px rgba(13,71,161,.12) inset;
+}
+.thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.thumb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  display: grid; place-items: center;
+}
+.thumb-nav.prev { left: 4px; }
+.thumb-nav.next { right: 4px; }
