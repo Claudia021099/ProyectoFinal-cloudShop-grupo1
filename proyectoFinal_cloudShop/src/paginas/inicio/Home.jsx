@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Home.css";
-
 import { Link } from "react-router-dom";
 
 import bannerImg from "../../assets/banner/backgroundBanner.jpg";
@@ -20,6 +19,7 @@ import MasProductos from "./MasProductos";
 
 function Home() {
   const [index, setIndex] = useState(0);
+
   const slides = [
     {
       banner: bannerImg,
@@ -39,7 +39,6 @@ function Home() {
           <Link to="/laptop">
             <button className="ver">Ver más →</button>
           </Link>
-
           <div className="descript">
             <div className="prec">
               <p>Laptop Hp Gamer Omen Max 32gb Ram Ssd 16"</p>
@@ -53,7 +52,7 @@ function Home() {
             </div>
             <div className="prec">
               <p>Laptop HP Pavilion Gaming 15-dk0001la Core i5-9300H 8GB</p>
-              <h2  className="pre1">S/.7,999</h2>
+              <h2 className="pre1">S/.7,999</h2>
               <h3>S/ 2,399</h3>
             </div>
           </div>
@@ -73,8 +72,6 @@ function Home() {
           <Link to="/desktop">
             <button className="btn1">Ver más →</button>
           </Link>
-
-
           <div className="descript">
             <div className="prec">
               <p>Computadora PC Gamer Core I7 Ram32GB, SSD 960GB</p>
@@ -104,6 +101,15 @@ function Home() {
   const anterior = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
+
+  // ✅ Movimiento automático cada 4 segundos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides.length);
+    }, 4000); // 4 segundos
+
+    return () => clearInterval(interval); // Limpiar el intervalo al desmontar
+  }, [slides.length]);
 
   return (
     <>
