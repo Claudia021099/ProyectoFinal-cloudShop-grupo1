@@ -49,11 +49,11 @@ export default function Carrito({ cartItems, removerCarrito }) {
               />
               <div className="carrito-contenedor">
                 <h4>{item.nombre}</h4>
-                <p>${item.precio.toFixed(2)}</p>
+                <p>S/{item.precio.toFixed(2)}</p>
                 <div className="cantidad-controles">
                   <button onClick={() => actualizarCantidad(item.id, -1)}>-</button>
                   <span>{item.cantidad || 1}</span>
-                  <button onClick={() => actualizarCantidad(item.id, 1)}>+</button>
+                  <button onClick={() => actualizarCantidad(item.id, +1)}>+</button>
                 </div>
                 <button
                   className="remover-carrito"
@@ -79,12 +79,12 @@ export default function Carrito({ cartItems, removerCarrito }) {
         <div className="resumen-costos">
           <div className="costo-item">
             <span>Sub-total</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>S/{subtotal.toFixed(2)}</span>
           </div>
           {descuentoAplicado && (
             <div className="costo-item descuento">
               <span>Descuento Estudiante (20%)</span>
-              <span>-${descuento.toFixed(2)}</span>
+              <span>-S/{descuento.toFixed(2)}</span>
             </div>
           )}
           <div className="costo-item">
@@ -93,11 +93,11 @@ export default function Carrito({ cartItems, removerCarrito }) {
           </div>
           <div className="costo-item">
             <span>Tarifa de servicio</span>
-            <span>${tarifa.toFixed(2)}</span>
+            <span>S/{tarifa.toFixed(2)}</span>
           </div>
           <div className="costo-item total"> 
             <span>Total</span>
-            <span>${total.toFixed(2)}</span> 
+            <span>S/{total.toFixed(2)}</span> 
           </div>
         </div>
       </div>
