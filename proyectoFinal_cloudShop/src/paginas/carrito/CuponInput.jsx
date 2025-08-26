@@ -15,9 +15,9 @@ export const CuponInput = ({ onDescuentoAplicado }) => {
 
   const handleChange = (e) => {
     const valor = e.target.value
-      .toUpperCase()
-      .replace(/[^A-Z0-9]/g, '')
-      .slice(0, 10);
+      .toUpperCase()  //mayusculas
+      .replace(/[^A-Z0-9]/g, '') //solo letras y numeros
+      .slice(0, 10); //maximo 10 caracteres
     setCupon(valor);
     setMensajeCupon('');
   };

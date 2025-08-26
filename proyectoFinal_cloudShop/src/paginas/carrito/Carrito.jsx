@@ -49,7 +49,7 @@ export default function Carrito({ cartItems, removerCarrito }) {
               />
               <div className="carrito-contenedor">
                 <h4>{item.nombre}</h4>
-                <p>S/{item.precio.toFixed(2)}</p>
+                <p>S/{item.precio.toFixed(2)}</p> 
                 <div className="cantidad-controles">
                   <button onClick={() => actualizarCantidad(item.id, -1)}>-</button>
                   <span>{item.cantidad || 1}</span>
