@@ -23,7 +23,6 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
     agregarCarrito(producto);
   };
 
-  // mini carrusel
   const thumbsRef = useRef(null);
   const scrollThumbs = (dir = 1) => {
     thumbsRef.current?.scrollBy({ left: dir * 220, behavior: "smooth" });
@@ -79,19 +78,25 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
         <div className="pd-info">
           <h1 className="pd-titulo">{producto.nombre}</h1>
 
-          <div className="stars">
-            {(() => {
-              const promedio = producto.resenias.reduce((acc, r) => acc + r.estrellas, 0) / producto.resenias.length;
-              const estrellasLlenas = Math.round(promedio); 
-              return (
-                <>
-                  {"★".repeat(estrellasLlenas)}
-                  {"☆".repeat(5 - estrellasLlenas)}
-                </>
-              );
-            })()}
+          <div className="pd-rating">
+            <div className="stars">
+              {(() => {
+                const promedio = producto.resenias.reduce((acc, r) => acc + r.estrellas, 0) / producto.resenias.length;
+                const estrellasLlenas = Math.round(promedio);
+                return (
+                  <>
+                    {"★".repeat(estrellasLlenas)}
+                    {"☆".repeat(5 - estrellasLlenas)}
+                  </>
+                );
+              })()}
+            </div>
+            <span className="pd-rating-num">
+              {producto.resenias?.length ?? 0}{""}
+              {producto.resenias?.length === 1 ? "reseña" : "reseñas"}
+            </span>
           </div>
-
+          <hr className="pd-separador" />
           <div className="pd-precio">
             {producto.estado === "DESCUENTO" ? (
               <>
@@ -109,13 +114,11 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
               </>
             )}
           </div>
-
+          <hr className="pd-separador" />
           <p className="pd-descripcion">
             {producto.descripcion ??
               "Equipo ideal para clases en línea y tareas de oficina. Excelente relación precio/rendimiento."}
           </p>
-
-          <div className="pd-cta">
             <button
               className="btn-primario"
               onClick={() => {
@@ -125,15 +128,10 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
             >
               Agregar al carrito
             </button>
-
-            <button className="btn-like" aria-label="Guardar en favoritos">
-              ♡
-            </button>
-          </div>
         </div>
       </div>
-
-      <h1 className="pd-similares">Productos Similares</h1>
+      <hr className="seccion-separador" />
+      <h1 className="pd-subtitulo">Productos Similares</h1>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
@@ -178,7 +176,7 @@ function ProductDescripcion({ isLoggedIn, agregarCarrito, handleClick }) {
             </SwiperSlide>
           ))}
       </Swiper>
-
+       <hr className="seccion-separador" />
       <h2 className="pd-subtitulo">Reseñas</h2>
       <div className="pd-resenias">
         {producto.resenias?.length ? (
