@@ -15,7 +15,10 @@ import img02 from "../../assets/banner/img2.png";
 import img3 from "../../assets/banner/img3.png";
 import img4 from "../../assets/banner/img4.png";
 import Productos from "./Productos";
+import Products from "./Products";
 import MasProductos from "./MasProductos";
+import foto from "../../assets/banner/foto.png";
+import cpu from "../../assets/banner/cpu.png";
 
 function Home() {
   const [index, setIndex] = useState(0);
@@ -102,13 +105,12 @@ function Home() {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  // ✅ Movimiento automático cada 4 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 4000); // 4 segundos
+    }, 4000);
 
-    return () => clearInterval(interval); // Limpiar el intervalo al desmontar
+    return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
@@ -162,9 +164,21 @@ function Home() {
       <hr style={{ height: "2px", backgroundColor: "black", border: "none" }} />
       <br />
       <h1>Productos en Oferta</h1>
+            <Products tipo="cpu"/>
+      <Link to="/audio">
+      <img className="foto" src={foto} alt="img" style={{ cursor: "pointer" }} />
+    </Link>
+      
+      <h1>Productos en Oferta</h1>
       <Productos tipo="laptop"/>
+      <Link to="/cpu">
+      <img className="cpu" src={cpu} alt="img" style={{ cursor: "pointer" }} />
+    </Link>
+      
+
       <h1>Más Productos</h1>
       <MasProductos tipo="desktop"/>
+      
     </>
   );
 }

@@ -105,3 +105,22 @@ h1{
     font-family: Arial, sans-serif;
     padding: 60px;
 }
+.foto{
+  width: 1715px;
+  padding-left: 190px;
+  margin: 20px 0;
+}
+.foto:hover{ 
+  transform: scale(1.05);
+  box-shadow: 10px 8px 4px(0,0,0,0.2);
+}
+.cpu{
+  width: 1715px;
+  height: 400px;
+  padding-left: 190px;
+  margin: 20px 0;
+}
+.cpu:hover{ 
+  transform: scale(1.05);
+  box-shadow: 10px 8px 4px(0,0,0,0.2);
+}
