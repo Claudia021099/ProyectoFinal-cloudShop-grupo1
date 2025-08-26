@@ -237,12 +237,11 @@
     height: 600px;
 }
 
-/* */
+/* Métodos Pago */
 .pago-container {
   display: flex;
   gap: 24px;
   align-items: flex-start;
-  font-family: Inter, system-ui, Arial, sans-serif; /**/
 }
 
 .metodosPago {
@@ -272,7 +271,7 @@
 
 .botonesSeleccion {
   margin-top: 20px;
-  margin-bottom: 20px; /*modificar p*/
+  margin-bottom: 20px;
   gap: 20px;
 }
 
@@ -349,6 +348,81 @@
   height: 60px;
   margin-top: 18px;
   opacity: 40%;
+}
+
+#ingresarPaypal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-Color: rgba(0,0,0,0.4);
+}
+
+.contenidoPaypal {
+  background: #fff;
+  margin: 13% auto;
+  box-Shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 10px;
+  height: 275px;
+  width: 38%;
+  text-align: center;
+}
+
+.cabezeraPaypal img{
+  width: 140px;
+}
+
+.close {
+  position: absolute;
+  top: 175px;
+  right: 440px;
+  background: transparent;
+  border: none;
+  font-size: 23px;
+  cursor: pointer;
+  color:rgb(141, 20, 20);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close:hover {
+  color:#ff1100;
+  transform: scale(1.1);
+}
+
+.cuerpoPaypal {
+  background-color: #d5d5d5;
+  position: absolute;
+  width: 578.5px;
+  left: 471px;
+}
+
+.nombrePaypal {
+  font-size: 16px;
+  margin-top: 30px;
+  width: 240px;
+}
+
+.contraPaypal {
+  font-size: 16px;
+  margin-top: 15px;
+  width: 240px;
+}
+
+.cuerpoPaypal button {
+  background: #55bbff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  width: 150px;
+  margin-top: 26px;
+  margin-bottom: 30px;
 }
 
 /* */
