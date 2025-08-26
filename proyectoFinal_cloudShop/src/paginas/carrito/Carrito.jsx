@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { DetallesEnvio } from './DetalleEnvio';
 import { MetodoPago } from './MetodoPago';
 import { Link, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import './Carrito.css';
 import { CuponInput } from './CuponInput';
+import './Carrito.css';
 
 export default function Carrito({ cartItems, removerCarrito }) {
   const [descuentoAplicado, setDescuentoAplicado] = useState(false);
@@ -12,44 +12,27 @@ export default function Carrito({ cartItems, removerCarrito }) {
   const navigate = useNavigate();
 
   const actualizarCantidad = (id, incremento) => {
-    setItems((prevItems) =>
-      prevItems.map((item) => {
-        if (item.id === id) {
-          const nuevaCantidad = (item.cantidad || 1) + incremento;
-          // Evitar cantidades negativas
-          return {
-            ...item,
-            cantidad: nuevaCantidad > 0 ? nuevaCantidad : 1,
-          };
-        }
-        return item;
-      })
+    setItems(prevItems =>
+      prevItems.map(item =>
+        item.id === id ? {
+          ...item,
+          cantidad: Math.max((item.cantidad || 1) + incremento, 1)
+        } : item
+      )
     );
   };
 
-  const subtotal = items.reduce(
-    (total, item) => total + item.precio * (item.cantidad || 1),
-    0
-  );
-
-  const envio = 'Gratis';
+  const subtotal = items.reduce((total, item) => 
+    total + item.precio * (item.cantidad || 1), 0);
   const descuento = descuentoAplicado ? subtotal * 0.2 : 0;
   const tarifa = subtotal * 0.05;
   const total = subtotal - descuento + tarifa;
 
-  const renderEstrellas = (calificacion) => {
-    return '★'.repeat(calificacion) + '☆'.repeat(5 - calificacion);
-  };
-
-  const handleRemoverItem = (id) => {
+  const handleEliminar = (id) => {
     // Actualizar estado local
-    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    setItems(prevItems => prevItems.filter(item => item.id !== id));
     // Actualizar estado global
     removerCarrito(id);
-  };
-
-  const handleCancelar = () => {
-    navigate('/catalogo');
   };
 
   const CarritoCompra = () => (
@@ -59,28 +42,24 @@ export default function Carrito({ cartItems, removerCarrito }) {
         {items.length === 0 ? (
           <p>El carrito está vacío</p>
         ) : (
-          items.map((item, index) => (
-            <div key={`${item.id}-${index}`} className="carrito-item">
+          items.map(item => (
+            <div key={item.id} className="carrito-item">
               <img
                 className="carrito-item-img"
-                src={item.imageUrl || item.img}
-                alt={item.titulo || item.nombre}
+                src={item.img}
+                alt={item.nombre}
               />
               <div className="carrito-contenedor">
-                <h4>{item.titulo || item.nombre}</h4>
+                <h4>{item.nombre}</h4>
                 <p>${item.precio.toFixed(2)}</p>
                 <div className="cantidad-controles">
-                  <button onClick={() => actualizarCantidad(item.id, -1)}>
-                    -
-                  </button>
+                  <button onClick={() => actualizarCantidad(item.id, -1)}>-</button>
                   <span>{item.cantidad || 1}</span>
-                  <button onClick={() => actualizarCantidad(item.id, 1)}>
-                    +
-                  </button>
+                  <button onClick={() => actualizarCantidad(item.id, 1)}>+</button>
                 </div>
                 <button
                   className="remover-carrito"
-                  onClick={() => handleRemoverItem(item.id)} // Cambiar aquí
+                  onClick={() => handleEliminar(item.id)} 
                 >
                   ELIMINAR
                 </button>
@@ -89,10 +68,8 @@ export default function Carrito({ cartItems, removerCarrito }) {
           ))
         )}
         <div className="botones-accion">
-          <Link to="/carrito/envio" className="btn-siguiente">
-            Siguiente
-          </Link>
-          <button className="btn-cancelar" onClick={handleCancelar}>
+          <Link to="/carrito/envio" className="btn-siguiente">Siguiente</Link>
+          <button className="btn-cancelar" onClick={() => navigate('/catalogo')}>
             Cancelar
           </button>
         </div>
@@ -114,7 +91,7 @@ export default function Carrito({ cartItems, removerCarrito }) {
           )}
           <div className="costo-item">
             <span>Envío</span>
-            <span className="envio-gratis">{envio}</span>
+            <span className="envio-gratis">Gratis</span>
           </div>
           <div className="costo-item">
             <span>Tarifa de servicio</span>
@@ -132,28 +109,13 @@ export default function Carrito({ cartItems, removerCarrito }) {
   return (
     <div className="proceso-compra">
       <nav className="nav-proceso">
-        <Link
-          to="/carrito"
-          className={`nav-item ${
-            location.pathname === '/carrito' ? 'activo' : ''
-          }`}
-        >
+        <Link to="/carrito" className={`nav-item ${location.pathname === '/carrito' ? 'activo' : ''}`}>
           Carrito de Compra
         </Link>
-        <Link
-          to="/carrito/envio"
-          className={`nav-item ${
-            location.pathname === '/carrito/envio' ? 'activo' : ''
-          }`}
-        >
+        <Link to="/carrito/envio" className={`nav-item ${location.pathname === '/carrito/envio' ? 'activo' : ''}`}>
           Detalles de Envío
         </Link>
-        <Link
-          to="/carrito/pago"
-          className={`nav-item ${
-            location.pathname === '/carrito/pago' ? 'activo' : ''
-          }`}
-        >
+        <Link to="/carrito/pago" className={`nav-item ${location.pathname === '/carrito/pago' ? 'activo' : ''}`}>
           Método de Pago
         </Link>
       </nav>
