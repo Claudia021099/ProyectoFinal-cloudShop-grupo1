@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, useLocation  } from "react-router-dom"
+import {Routes, Route } from "react-router-dom"
 import Home from './paginas/inicio/Home'
 import Catalogo from './paginas/catalogo/Catalogo'
 import Ayuda from './paginas/ayuda/Ayuda'
@@ -15,6 +15,7 @@ import CatalogoGpus from './paginas/catalogo/CatalogoGpus'
 import ProductoDescripcion from './paginas/catalogo/ProductoDescripcion';
 import Login from './paginas/login/Login'
 import { useEffect, useState } from 'react'
+import ScrollToTop from './ScrolltoTop';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -72,9 +73,9 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Header
         count={cartItems.reduce((acc, item) => acc + (item.cantidad || 1), 0)}
-          // ✅ pasamos logout al Header
       />
 
       <Routes>
@@ -167,7 +168,7 @@ function App() {
               isLoggedIn={isLoggedIn}
               setIsLoggedIn={setIsLoggedIn}
               setCount={setCount}
-              onLogout={logout} 
+              onLogout={logout}
             />
           }
         />
