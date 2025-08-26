@@ -29,9 +29,7 @@ export default function Carrito({ cartItems, removerCarrito }) {
   const total = subtotal - descuento + tarifa;
 
   const handleEliminar = (id) => {
-    // Actualizar estado local
     setItems(prevItems => prevItems.filter(item => item.id !== id));
-    // Actualizar estado global
     removerCarrito(id);
   };
 
@@ -97,9 +95,9 @@ export default function Carrito({ cartItems, removerCarrito }) {
             <span>Tarifa de servicio</span>
             <span>${tarifa.toFixed(2)}</span>
           </div>
-          <div className="costo-item total">
+          <div className="costo-item total"> 
             <span>Total</span>
-            <span>${total.toFixed(2)}</span>
+            <span>${total.toFixed(2)}</span> 
           </div>
         </div>
       </div>
